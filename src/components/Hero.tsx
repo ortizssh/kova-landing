@@ -69,33 +69,31 @@ function ChatWidget() {
           </div>
         </div>
 
-        {/* Typing indicator */}
+        {/* AI suggests a call */}
         <div className="flex gap-2 items-end">
           <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
             K
           </div>
-          <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2.5 shadow-sm flex gap-1 items-center">
-            <motion.span
-              className="w-1.5 h-1.5 rounded-full bg-text-muted"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 1.2, repeat: Infinity, delay: 0 }}
-            />
-            <motion.span
-              className="w-1.5 h-1.5 rounded-full bg-text-muted"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 1.2, repeat: Infinity, delay: 0.2 }}
-            />
-            <motion.span
-              className="w-1.5 h-1.5 rounded-full bg-text-muted"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 1.2, repeat: Infinity, delay: 0.4 }}
-            />
+          <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[260px] overflow-hidden">
+            <div className="px-3 py-2 text-sm text-text-primary">
+              ¿Prefieres que te explique por teléfono? 📞
+            </div>
+            <div className="px-3 pb-2.5">
+              <button className="w-full flex items-center justify-center gap-2 py-2 bg-green-500 text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                Solicitar llamada
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Input bar */}
       <div className="border-t border-border px-3 py-2.5 flex items-center gap-2">
+        {/* Phone icon */}
+        <div className="w-7 h-7 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 cursor-pointer hover:bg-green-500/20 transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
         <div className="flex-1 bg-[#f5f5f8] rounded-full px-3 py-2 text-xs text-text-muted">
           Escribe un mensaje...
         </div>
