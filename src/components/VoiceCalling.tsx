@@ -41,19 +41,19 @@ function WaveformBar({ height, delay }: { height: number; delay: number }) {
 
 export default function VoiceCalling() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="py-12 sm:py-16 md:py-24 bg-white">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left — text content */}
           <AnimatedSection>
             <div>
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
                 Nuevo
               </span>
-              <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4 leading-tight">
                 Llamadas telefónicas reales con IA — con todo el contexto
               </h2>
-              <p className="text-text-secondary text-lg mb-8">
+              <p className="text-text-secondary text-base sm:text-lg mb-8">
                 Kova no solo chatea. Tu asistente atiende y realiza llamadas
                 telefónicas reales — no VoIP, no chat de voz — llamadas a
                 números reales. Y lo hace con todo el historial de la

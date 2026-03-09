@@ -50,19 +50,19 @@ const metrics = [
 
 export default function Metrics() {
   return (
-    <section className="py-16 md:py-20 bg-sage">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <AnimatedSection className="text-center mb-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+    <section className="py-12 sm:py-16 md:py-20 bg-sage">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <AnimatedSection className="text-center mb-8 sm:mb-10">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium">
             Métricas reales de early access
           </span>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {metrics.map((m, i) => (
             <AnimatedSection key={m.label} delay={i * 0.1}>
-              <div className="bg-bg-card rounded-2xl p-6 text-center shadow-sm border border-border">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className="bg-bg-card rounded-2xl p-4 sm:p-6 text-center shadow-sm border border-border">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
                   {m.isDecimal ? (
                     <span>{m.prefix}{m.value}{m.suffix}</span>
                   ) : (
@@ -73,7 +73,7 @@ export default function Metrics() {
                     />
                   )}
                 </div>
-                <p className="text-sm text-text-secondary font-medium">
+                <p className="text-xs sm:text-sm text-text-secondary font-medium">
                   {m.label}
                 </p>
               </div>

@@ -195,9 +195,9 @@ function ChatWidget() {
 
 export default function Hero() {
   return (
-    <section className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+    <section className="pt-20 pb-12 sm:pt-28 md:pt-36 sm:pb-16 md:pb-24 overflow-hidden">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 md:gap-8 items-center">
           {/* Left */}
           <div>
             <AnimatedSection>
@@ -207,14 +207,14 @@ export default function Hero() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <h1 className="text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
                 Convierte visitantes en compradores con{" "}
                 <span className="text-primary">IA conversacional</span>
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
+              <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
                 Kova es un asistente de compras con inteligencia artificial que
                 se integra en tu tienda Shopify o WooCommerce. Recomienda
                 productos, gestiona el carrito y atiende llamadas telefónicas
@@ -270,11 +270,11 @@ export default function Hero() {
         </div>
 
         {/* Platform badges */}
-        <AnimatedSection delay={0.4} className="mt-16 text-center">
-          <p className="text-sm text-text-muted mb-8">
+        <AnimatedSection delay={0.4} className="mt-12 sm:mt-16 text-center">
+          <p className="text-xs sm:text-sm text-text-muted mb-6 sm:mb-8">
             Se integra con las principales plataformas de e-commerce
           </p>
-          <div className="flex items-center justify-center gap-12 flex-wrap">
+          <div className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap">
             {/* Shopify logo */}
             <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
               {/* eslint-disable-next-line @next/next/no-img-element */}
