@@ -150,30 +150,8 @@ export default function VoiceCalling() {
                   )}
                 </div>
 
-                {/* Context badge — the differentiator */}
-                <div className="mx-5 mb-4 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/5">
-                  <div className="flex items-center gap-1.5 mb-2.5">
-                    <MessageSquare className="w-3.5 h-3.5 text-primary-light" />
-                    <span className="text-[11px] font-semibold text-white/90">Contexto del chat anterior</span>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-sm shrink-0">🧴</div>
-                      <div>
-                        <p className="text-[11px] font-medium text-white/80">Crema Hidratante Suave</p>
-                        <p className="text-[11px] text-primary-light font-semibold">$24.990</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-0.5 pl-1">
-                      <span className="text-[10px] text-white/40">• Preguntó por ingredientes</span>
-                      <span className="text-[10px] text-white/40">• Interesada en envío gratis</span>
-                      <span className="text-[10px] text-white/40">• Producto en carrito</span>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Call action buttons (iOS style) */}
-                <div className="px-8 pt-2 pb-8">
+                <div className="px-8 pt-4 pb-8">
                   <div className="grid grid-cols-3 gap-y-5 place-items-center">
                     <div className="flex flex-col items-center gap-1">
                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">

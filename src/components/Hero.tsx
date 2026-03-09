@@ -271,36 +271,24 @@ export default function Hero() {
 
         {/* Platform badges */}
         <AnimatedSection delay={0.4} className="mt-16 text-center">
-          <p className="text-sm text-text-muted mb-6">
+          <p className="text-sm text-text-muted mb-8">
             Se integra con las principales plataformas de e-commerce
           </p>
-          <div className="flex items-center justify-center gap-8 opacity-60">
-            {/* Shopify logo */}
-            <svg width="120" height="36" viewBox="0 0 120 36" fill="none">
-              <text
-                x="0"
-                y="26"
-                fontFamily="Plus Jakarta Sans, sans-serif"
-                fontWeight="700"
-                fontSize="22"
-                fill="#95BF47"
-              >
-                Shopify
-              </text>
-            </svg>
-            {/* WooCommerce logo */}
-            <svg width="160" height="36" viewBox="0 0 160 36" fill="none">
-              <text
-                x="0"
-                y="26"
-                fontFamily="Plus Jakarta Sans, sans-serif"
-                fontWeight="700"
-                fontSize="22"
-                fill="#96588A"
-              >
-                WooCommerce
-              </text>
-            </svg>
+          <div className="flex items-center justify-center gap-12 flex-wrap">
+            {/* Shopify logo SVG */}
+            <div className="flex items-center justify-center">
+              <svg width="100" height="32" viewBox="0 0 446 128" fill="none">
+                <path fill="#95BF47" d="M115.6 30.3c-.1-.8-.7-1.2-1.2-1.2s-10.4-.8-10.4-.8-6.9-6.9-7.7-7.6c-.8-.8-2.2-.5-2.8-.3-.1 0-1.5.5-3.9 1.2-2.3-6.7-6.4-12.8-13.6-12.8h-.6C73.6 6.3 71.1 4 69 4c-16.8.2-24.8 21-27.3 31.7-6.5 2-11.1 3.4-11.7 3.6-3.6 1.1-3.7 1.2-4.2 4.6C25.5 46.2 14 137.5 14 137.5l85.4 14.8 40.3-10s-24-81.7-24.1-82zM85.1 25.3c-1.9.6-4 1.2-6.4 2V25c0-4.4-.6-8-1.6-10.9 4 .5 6.7 5.1 8 11.2zM72.4 14.9c1.1 3 1.8 7.1 1.8 12.7v1c-4.2 1.3-8.7 2.7-13.2 4.1 2.5-9.8 7.3-14.6 11.4-17.8zM68.7 9.2c.7 0 1.5.3 2.2.8-5.4 2.5-11.1 8.9-13.6 21.6l-10.5 3.2C49.7 25 56.1 9.4 68.7 9.2z"/>
+                <path fill="#5E8E3E" d="M114.4 29.1c-.5 0-10.4-.8-10.4-.8s-6.9-6.9-7.7-7.6c-.3-.3-.6-.4-1-.4l-5.6 114.2 40.3-10S115.6 30.3 115.6 30.3c-.1-.8-.7-1.2-1.2-1.2z"/>
+                <path fill="#fff" d="M79.5 45.8l-4.4 16.3s-5-2.3-10.8-2.3c-8.7 0-9.2 5.5-9.2 6.8 0 7.5 19.5 10.4 19.5 28 0 13.8-8.8 22.8-20.6 22.8-14.2 0-21.5-8.8-21.5-8.8l3.8-12.6s7.5 6.4 13.8 6.4c4.1 0 5.8-3.3 5.8-5.7 0-9.8-16-10.2-16-26.4 0-13.6 9.7-26.7 29.3-26.7 7.6.1 11.3 2.2 11.3 2.2z"/>
+              </svg>
+            </div>
+            {/* WooCommerce logo SVG */}
+            <div className="flex items-center justify-center">
+              <svg width="140" height="32" viewBox="0 0 579 108" fill="none">
+                <path fill="#96588A" d="M52.9 0H16.2C7.3 0 0 7.3 0 16.2v55.7c0 8.9 7.3 16.2 16.2 16.2h14.3l6.4 19.8 19.8-19.8h-3.8c8.9 0 16.2-7.3 16.2-16.2V16.2C69.1 7.3 61.8 0 52.9 0zM19.2 57.3c-1.8 2.6-4.3 3.8-7.3 3.5-3-.3-5.1-1.8-6.4-4.7-3.2-7.2-5.7-14.8-7.5-22.9-.7-3 .2-5.5 2.5-7.3 2.3-1.8 4.8-2.2 7.5-1.2 2.3.9 3.7 2.7 4.2 5.3.9 5.3 2.3 10.3 4 15.2 2.8-5.5 5-11.3 6.6-17.4.8-3 3-4.8 6-5.2 3-.3 5.4.7 7.2 3.1 2.6 3.4 4.5 7.2 5.8 11.4.7-8.5 2.4-16.5 5.1-24 1-2.8 3.2-4.4 6.2-4.8 2.8-.3 5.3.6 7.2 2.9 1.2 1.5 1.5 3.2 1 5.1-2.3 8.2-3.9 16.6-4.8 25.2-.5 4.6-1 9.2-1.5 13.8-.3 3.2-1.9 5.4-4.8 6.5-2.8 1-5.3.4-7.3-1.9-3.8-4.3-6.6-9.3-8.3-14.8-3.4 6.8-6.3 13.7-9.8 20.6-.5.9-1.2 1.9-2.4 3.2z"/>
+              </svg>
+            </div>
           </div>
         </AnimatedSection>
       </div>

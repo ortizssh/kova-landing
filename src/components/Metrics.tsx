@@ -44,8 +44,8 @@ function Counter({
 const metrics = [
   { value: 2195, suffix: "+", label: "Recomendaciones AI" },
   { value: 1808, suffix: "+", label: "Sesiones de chat" },
-  { value: 4.4, suffix: "%", label: "Tasa de conversión", isDecimal: true },
-  { prefix: "<", value: 45, suffix: " min", label: "De recomendación a compra" },
+  { value: 10, suffix: "%", label: "Tasa de conversión", isDecimal: true },
+  { prefix: "<", value: 20, suffix: " min", label: "De recomendación a compra" },
 ];
 
 export default function Metrics() {
