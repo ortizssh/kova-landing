@@ -1,16 +1,77 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 
+/* Typing dots component */
+function TypingDots() {
+  return (
+    <div className="flex gap-2 items-end">
+      <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">K</div>
+      <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2.5 shadow-sm flex gap-1 items-center">
+        <motion.span className="w-1.5 h-1.5 rounded-full bg-text-muted" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: 0 }} />
+        <motion.span className="w-1.5 h-1.5 rounded-full bg-text-muted" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: 0.2 }} />
+        <motion.span className="w-1.5 h-1.5 rounded-full bg-text-muted" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: 0.4 }} />
+      </div>
+    </div>
+  );
+}
+
+/* Message animation variant */
+const msgVariant = {
+  hidden: { opacity: 0, y: 12, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1, 
+    transition: { duration: 0.35, ease: "easeOut" as const } 
+  },
+};
+
 function ChatWidget() {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    // Timeline: each step shows typing then message
+    const delays = [
+      800,   // step 1: AI welcome appears
+      1500,  // step 2: typing before user msg
+      1000,  // step 3: user message appears
+      1200,  // step 4: typing before AI product
+      1800,  // step 5: AI product card appears
+      1400,  // step 6: typing before call suggestion
+      1200,  // step 7: call suggestion appears
+    ];
+
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    let cumulative = 0;
+    delays.forEach((d, i) => {
+      cumulative += d;
+      timers.push(setTimeout(() => setStep(i + 1), cumulative));
+    });
+
+    // Loop the animation
+    const totalTime = cumulative + 4000;
+    const loopTimer = setTimeout(() => setStep(0), totalTime);
+    const restartTimer = setTimeout(() => {
+      setStep(0);
+      // Re-trigger by forcing re-mount would be complex, 
+      // so we just let it sit on the final state
+    }, totalTime + 500);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(loopTimer);
+      clearTimeout(restartTimer);
+    };
+  }, []);
+
   return (
     <div className="w-full max-w-[380px] bg-white rounded-3xl shadow-lg border border-border overflow-hidden">
       {/* Header */}
       <div className="bg-primary px-4 py-3 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">
-          K
-        </div>
+        <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">K</div>
         <div className="flex-1">
           <div className="text-white font-semibold text-sm">Kova</div>
           <div className="flex items-center gap-1.5">
@@ -26,71 +87,95 @@ function ChatWidget() {
       </div>
 
       {/* Messages */}
-      <div className="p-4 flex flex-col gap-3 bg-[#f9f9fb] min-h-[280px]">
-        {/* AI welcome */}
-        <div className="flex gap-2 items-end">
-          <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
-            K
-          </div>
-          <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2 text-sm text-text-primary shadow-sm max-w-[260px]">
-            ¡Hola! 👋 Soy tu asistente de compras. ¿En qué puedo ayudarte?
-          </div>
-        </div>
+      <div className="p-4 flex flex-col gap-3 bg-[#f9f9fb] min-h-[320px]">
+        <AnimatePresence mode="popLayout">
+          {/* Step 0: typing for welcome */}
+          {step === 0 && <TypingDots key="typing-0" />}
 
-        {/* User message */}
-        <div className="flex justify-end">
-          <div className="bg-primary text-white rounded-xl rounded-br-sm px-3 py-2 text-sm max-w-[220px]">
-            Busco algo para piel sensible
-          </div>
-        </div>
-
-        {/* AI response with product card */}
-        <div className="flex gap-2 items-end">
-          <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
-            K
-          </div>
-          <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[280px] overflow-hidden">
-            <div className="px-3 py-2 text-sm text-text-primary">
-              ¡Tengo la opción perfecta para ti! 🧴
-            </div>
-            {/* Product card */}
-            <div className="border-t border-border p-3">
-              <div className="w-full h-24 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg mb-2 flex items-center justify-center">
-                <span className="text-3xl">🧴</span>
+          {/* Step 1+: AI welcome */}
+          {step >= 1 && (
+            <motion.div key="msg-welcome" variants={msgVariant} initial="hidden" animate="visible" className="flex gap-2 items-end">
+              <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">K</div>
+              <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2 text-sm text-text-primary shadow-sm max-w-[260px]">
+                ¡Hola! 👋 Soy tu asistente de compras. ¿En qué puedo ayudarte?
               </div>
-              <p className="text-sm font-semibold text-text-primary">
-                Crema Hidratante Suave
-              </p>
-              <p className="text-sm font-bold text-primary mt-0.5">$24.990</p>
-              <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          )}
 
-        {/* AI suggests a call */}
-        <div className="flex gap-2 items-end">
-          <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
-            K
-          </div>
-          <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[260px] overflow-hidden">
-            <div className="px-3 py-2 text-sm text-text-primary">
-              ¿Prefieres que te explique por teléfono? 📞
-            </div>
-            <div className="px-3 pb-2.5">
-              <button className="w-full flex items-center justify-center gap-2 py-2 bg-green-500 text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition-colors">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                Solicitar llamada
-              </button>
-            </div>
-          </div>
-        </div>
+          {/* Step 2: user typing simulation (input bar cursor) */}
+          {step === 2 && (
+            <motion.div key="user-typing" variants={msgVariant} initial="hidden" animate="visible" className="flex justify-end">
+              <div className="bg-primary/20 rounded-xl rounded-br-sm px-3 py-2 text-sm max-w-[220px] flex items-center gap-1">
+                <motion.span className="w-1.5 h-1.5 rounded-full bg-primary/60" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0 }} />
+                <motion.span className="w-1.5 h-1.5 rounded-full bg-primary/60" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.15 }} />
+                <motion.span className="w-1.5 h-1.5 rounded-full bg-primary/60" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 0.8, repeat: Infinity, delay: 0.3 }} />
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 3+: User message */}
+          {step >= 3 && (
+            <motion.div key="msg-user" variants={msgVariant} initial="hidden" animate="visible" className="flex justify-end">
+              <div className="bg-primary text-white rounded-xl rounded-br-sm px-3 py-2 text-sm max-w-[220px]">
+                Busco algo para piel sensible
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 4: AI typing */}
+          {step === 4 && <TypingDots key="typing-4" />}
+
+          {/* Step 5+: AI product card */}
+          {step >= 5 && (
+            <motion.div key="msg-product" variants={msgVariant} initial="hidden" animate="visible" className="flex gap-2 items-end">
+              <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">K</div>
+              <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[280px] overflow-hidden">
+                <div className="px-3 py-2 text-sm text-text-primary">
+                  ¡Tengo la opción perfecta para ti! 🧴
+                </div>
+                <div className="border-t border-border p-3">
+                  <div className="w-full h-24 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg mb-2 flex items-center justify-center">
+                    <span className="text-3xl">🧴</span>
+                  </div>
+                  <p className="text-sm font-semibold text-text-primary">Crema Hidratante Suave</p>
+                  <p className="text-sm font-bold text-primary mt-0.5">$24.990</p>
+                  <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 6: AI typing for call */}
+          {step === 6 && <TypingDots key="typing-6" />}
+
+          {/* Step 7: AI call suggestion */}
+          {step >= 7 && (
+            <motion.div key="msg-call" variants={msgVariant} initial="hidden" animate="visible" className="flex gap-2 items-end">
+              <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">K</div>
+              <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[260px] overflow-hidden">
+                <div className="px-3 py-2 text-sm text-text-primary">
+                  ¿Prefieres que te explique por teléfono? 📞
+                </div>
+                <div className="px-3 pb-2.5">
+                  <motion.button
+                    className="w-full flex items-center justify-center gap-2 py-2 bg-green-500 text-white text-xs font-semibold rounded-lg"
+                    animate={{ scale: [1, 1.03, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    Solicitar llamada
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Input bar */}
       <div className="border-t border-border px-3 py-2.5 flex items-center gap-2">
-        {/* Phone icon */}
         <div className="w-7 h-7 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 cursor-pointer hover:bg-green-500/20 transition-colors">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
@@ -98,16 +183,7 @@ function ChatWidget() {
           Escribe un mensaje...
         </div>
         <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="22" y1="2" x2="11" y2="13" />
             <polygon points="22 2 15 22 11 13 2 9 22 2" />
           </svg>
