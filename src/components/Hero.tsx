@@ -33,7 +33,7 @@ function ChatWidget() {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
-    // Timeline: each step shows typing then message
+    // Timeline: each step shows typing then message, then transitions to call
     const delays = [
       800,   // step 1: AI welcome appears
       1500,  // step 2: typing before user msg
@@ -42,6 +42,7 @@ function ChatWidget() {
       1800,  // step 5: AI product card appears
       1400,  // step 6: typing before call suggestion
       1200,  // step 7: call suggestion appears
+      1500,  // step 8: transition to call (animate chat out, call screen in)
     ];
 
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -51,19 +52,8 @@ function ChatWidget() {
       timers.push(setTimeout(() => setStep(i + 1), cumulative));
     });
 
-    // Loop the animation
-    const totalTime = cumulative + 4000;
-    const loopTimer = setTimeout(() => setStep(0), totalTime);
-    const restartTimer = setTimeout(() => {
-      setStep(0);
-      // Re-trigger by forcing re-mount would be complex, 
-      // so we just let it sit on the final state
-    }, totalTime + 500);
-
     return () => {
       timers.forEach(clearTimeout);
-      clearTimeout(loopTimer);
-      clearTimeout(restartTimer);
     };
   }, []);
 
