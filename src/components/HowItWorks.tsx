@@ -41,13 +41,13 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <AnimatedSection key={step.title} delay={i * 0.15}>
               <div className="text-center">
-                <div className="relative mb-6">
-                  <span className="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center mx-auto">
-                    {i + 1}
-                  </span>
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                <div className="relative mb-6 inline-block">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                     <step.icon className="w-7 h-7 text-primary" />
                   </div>
+                  <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center">
+                    {i + 1}
+                  </span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-text-primary mb-3">
                   {step.title}
