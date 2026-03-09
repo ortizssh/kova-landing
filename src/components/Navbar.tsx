@@ -34,7 +34,13 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://app.heykova.io/login"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-sage transition-colors"
+          >
+            Iniciar sesión
+          </a>
           <a
             href="https://app.heykova.io/register"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
@@ -67,12 +73,20 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a
-              href="https://app.heykova.io/register"
-              className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors mt-2"
-            >
-              Comenzar gratis
-            </a>
+            <div className="flex flex-col gap-2 mt-2">
+              <a
+                href="https://app.heykova.io/login"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-sage transition-colors"
+              >
+                Iniciar sesión
+              </a>
+              <a
+                href="https://app.heykova.io/register"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors"
+              >
+                Comenzar gratis
+              </a>
+            </div>
           </div>
         </div>
       )}
