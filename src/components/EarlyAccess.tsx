@@ -18,10 +18,6 @@ export default function EarlyAccess() {
               Kova está en early access. Las primeras tiendas ya están generando
               conversiones medibles con nuestro asistente.
             </p>
-            <p className="text-white/70 text-sm font-medium mb-8">
-              2 tiendas activas · 96 conversiones reales · $3M+ CLP en revenue
-              atribuido
-            </p>
             <a
               href="https://app.heykova.io/register"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 transition-colors text-base"
