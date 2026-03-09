@@ -6,8 +6,8 @@ import AnimatedSection from "./AnimatedSection";
 const points = [
   {
     icon: Phone,
-    title: "Llamadas entrantes y salientes",
-    desc: "El agente de voz atiende llamadas de tus clientes o las inicia proactivamente para seguimiento post-venta.",
+    title: "Llamadas reales entrantes y salientes",
+    desc: "El agente de voz atiende y realiza llamadas a números telefónicos reales. Tus clientes llaman al número de tu tienda y Kova contesta — como un agente humano.",
   },
   {
     icon: MessageSquare,
@@ -51,11 +51,12 @@ export default function VoiceCalling() {
                 Nuevo
               </span>
               <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4 leading-tight">
-                Atención telefónica con IA — con todo el contexto
+                Llamadas telefónicas reales con IA — con todo el contexto
               </h2>
               <p className="text-text-secondary text-lg mb-8">
-                Kova no solo chatea. Cuando tu cliente necesita hablar, el
-                agente de voz toma la llamada con todo el historial de la
+                Kova no solo chatea. Tu asistente atiende y realiza llamadas
+                telefónicas reales — no VoIP, no chat de voz — llamadas a
+                números reales. Y lo hace con todo el historial de la
                 conversación. Sin repetir, sin fricción.
               </p>
 
