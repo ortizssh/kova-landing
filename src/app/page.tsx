@@ -5,6 +5,7 @@ import HowItWorks from "@/components/HowItWorks";
 import VideoDemo from "@/components/VideoDemo";
 import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
+import VoiceCalling from "@/components/VoiceCalling";
 import Integrations from "@/components/Integrations";
 import Pricing from "@/components/Pricing";
 import EarlyAccess from "@/components/EarlyAccess";
@@ -23,6 +24,7 @@ export default function Home() {
         <VideoDemo />
         <Features />
         <WidgetShowcase />
+        <VoiceCalling />
         <Integrations />
         <Pricing />
         <EarlyAccess />

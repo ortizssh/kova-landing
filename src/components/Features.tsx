@@ -38,9 +38,9 @@ const features = [
   },
   {
     icon: Mic,
-    title: "Multimodal: Voz e Imágenes",
+    title: "Voz, Imágenes y Llamadas",
     description:
-      "Los clientes pueden enviar mensajes de voz y fotos. El asistente entiende y responde inteligentemente.",
+      "Los clientes pueden enviar audios, fotos, o escalar a una llamada telefónica con IA. El agente mantiene el contexto completo de la conversación.",
   },
   {
     icon: BookOpen,
