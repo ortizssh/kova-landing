@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="https://app.heykova.io/register"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-[--radius-md] bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
           >
             Comenzar gratis
           </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
             ))}
             <a
               href="https://app.heykova.io/register"
-              className="inline-flex items-center justify-center px-5 py-3 rounded-[--radius-md] bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors mt-2"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors mt-2"
             >
               Comenzar gratis
             </a>

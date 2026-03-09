@@ -94,7 +94,7 @@ const plans: Plan[] = [
 
 function ctaClasses(style: Plan["style"]) {
   const base =
-    "w-full py-3 rounded-[--radius-md] font-semibold text-sm transition-colors text-center block";
+    "w-full py-3 rounded-xl font-semibold text-sm transition-colors text-center block";
   switch (style) {
     case "outline":
       return `${base} border border-border text-text-primary hover:bg-sage`;
@@ -126,7 +126,7 @@ export default function Pricing() {
               <motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
-                className={`bg-bg-card rounded-[--radius-xl] p-6 border shadow-sm relative ${
+                className={`bg-bg-card rounded-3xl p-6 border shadow-sm relative ${
                   plan.highlighted
                     ? "border-primary shadow-primary scale-[1.03] lg:scale-105"
                     : "border-border"

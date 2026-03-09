@@ -18,7 +18,7 @@ export default function VideoDemo() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2} className="max-w-4xl mx-auto">
-          <div className="relative aspect-video rounded-[--radius-xl] overflow-hidden shadow-xl cursor-pointer group">
+          <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl cursor-pointer group">
             {/* Background: faint widget mockup */}
             <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#1e1e35] to-[#2a2a50]">
               {/* Simulated store + widget screenshot feel */}
@@ -102,7 +102,7 @@ export default function VideoDemo() {
         <AnimatedSection delay={0.3} className="text-center mt-10">
           <a
             href="https://app.heykova.io/register"
-            className="inline-flex items-center justify-center px-6 py-3.5 rounded-[--radius-md] bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
+            className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
           >
             Pruébalo gratis
           </a>

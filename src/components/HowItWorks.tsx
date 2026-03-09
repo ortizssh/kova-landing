@@ -45,7 +45,7 @@ export default function HowItWorks() {
                   <span className="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center mx-auto">
                     {i + 1}
                   </span>
-                  <div className="w-16 h-16 rounded-[--radius-lg] bg-primary/10 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
                     <step.icon className="w-7 h-7 text-primary" />
                   </div>
                 </div>

@@ -70,9 +70,9 @@ export default function Features() {
               <motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
-                className="bg-bg-card rounded-[--radius-lg] p-6 border border-border shadow-sm hover:shadow-lg transition-shadow h-full"
+                className="bg-bg-card rounded-2xl p-6 border border-border shadow-sm hover:shadow-lg transition-shadow h-full"
               >
-                <div className="w-12 h-12 rounded-[--radius-md] bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <f.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">

@@ -7,7 +7,7 @@ export default function EarlyAccess() {
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection>
-          <div className="rounded-[--radius-xl] bg-gradient-to-r from-primary to-primary-hover px-8 py-14 md:px-16 md:py-20 text-center text-white">
+          <div className="rounded-3xl bg-gradient-to-r from-primary to-primary-hover px-8 py-14 md:px-16 md:py-20 text-center text-white">
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-sm font-medium mb-6">
               Early Access
             </span>
@@ -24,7 +24,7 @@ export default function EarlyAccess() {
             </p>
             <a
               href="https://app.heykova.io/register"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-[--radius-md] bg-white text-primary font-semibold hover:bg-white/90 transition-colors text-base"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 transition-colors text-base"
             >
               Solicitar acceso
             </a>

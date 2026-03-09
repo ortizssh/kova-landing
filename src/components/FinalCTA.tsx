@@ -16,7 +16,7 @@ export default function FinalCTA() {
           </p>
           <a
             href="https://app.heykova.io/register"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-[--radius-md] bg-primary text-white font-semibold text-lg hover:bg-primary-hover transition-colors shadow-primary"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-semibold text-lg hover:bg-primary-hover transition-colors shadow-primary"
           >
             Crear cuenta gratis
           </a>

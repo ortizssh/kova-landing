@@ -53,7 +53,7 @@ function ThemePreview({
   return (
     <div className="flex flex-col items-center gap-2">
       <div
-        className="w-24 h-40 rounded-[--radius-md] border border-border overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+        className="w-24 h-40 rounded-xl border border-border overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         style={{ background: bg }}
       >
         {/* Mini header */}
@@ -137,7 +137,7 @@ export default function WidgetShowcase() {
               <AnnotationLine label="Barra de input" side="right" top="530px" />
 
               {/* Widget mockup */}
-              <div className="w-[380px] bg-white rounded-[--radius-xl] shadow-xl border border-border overflow-hidden">
+              <div className="w-[380px] bg-white rounded-3xl shadow-xl border border-border overflow-hidden">
                 {/* Header */}
                 <div className="bg-primary px-5 py-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">
@@ -164,7 +164,7 @@ export default function WidgetShowcase() {
                     <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
                       K
                     </div>
-                    <div className="bg-white rounded-[--radius-sm] px-4 py-2.5 text-sm text-text-primary shadow-sm">
+                    <div className="bg-white rounded-lg px-4 py-2.5 text-sm text-text-primary shadow-sm">
                       ¡Hola! 👋 ¿En qué puedo ayudarte hoy?
                     </div>
                   </div>
@@ -183,7 +183,7 @@ export default function WidgetShowcase() {
                   </div>
 
                   {/* Product card */}
-                  <div className="ml-9 bg-white rounded-[--radius-md] shadow-sm overflow-hidden max-w-[270px]">
+                  <div className="ml-9 bg-white rounded-xl shadow-sm overflow-hidden max-w-[270px]">
                     <div className="h-28 bg-gradient-to-br from-violet-200 via-indigo-100 to-purple-200 flex items-center justify-center relative">
                       {/* Colored product placeholder */}
                       <div className="w-16 h-16 rounded-xl bg-white/60 backdrop-blur-sm flex items-center justify-center shadow-sm">
@@ -210,14 +210,14 @@ export default function WidgetShowcase() {
                         ))}
                         <span className="text-[10px] text-text-muted ml-0.5">(128)</span>
                       </div>
-                      <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-[--radius-sm] hover:bg-primary-hover transition-colors">
+                      <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
                         Agregar al carrito
                       </button>
                     </div>
                   </div>
 
                   {/* Cart panel preview */}
-                  <div className="ml-9 bg-white rounded-[--radius-md] shadow-sm p-3 max-w-[270px]">
+                  <div className="ml-9 bg-white rounded-xl shadow-sm p-3 max-w-[270px]">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold text-text-primary">
                         🛒 Tu carrito (1)
@@ -226,8 +226,8 @@ export default function WidgetShowcase() {
                         $49.990
                       </span>
                     </div>
-                    <div className="flex items-center gap-2.5 p-2 bg-sage rounded-[--radius-sm]">
-                      <div className="w-10 h-10 bg-violet-100 rounded-[--radius-sm] flex items-center justify-center text-lg">
+                    <div className="flex items-center gap-2.5 p-2 bg-sage rounded-lg">
+                      <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center text-lg">
                         👟
                       </div>
                       <div className="flex-1">
@@ -238,7 +238,7 @@ export default function WidgetShowcase() {
                       </div>
                       <span className="text-xs font-semibold text-primary">$49.990</span>
                     </div>
-                    <button className="mt-2 w-full py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-[--radius-sm]">
+                    <button className="mt-2 w-full py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-lg">
                       Ir al checkout →
                     </button>
                   </div>

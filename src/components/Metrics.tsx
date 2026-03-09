@@ -61,7 +61,7 @@ export default function Metrics() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {metrics.map((m, i) => (
             <AnimatedSection key={m.label} delay={i * 0.1}>
-              <div className="bg-bg-card rounded-[--radius-lg] p-6 text-center shadow-sm border border-border">
+              <div className="bg-bg-card rounded-2xl p-6 text-center shadow-sm border border-border">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                   {m.isDecimal ? (
                     <span>{m.prefix}{m.value}{m.suffix}</span>

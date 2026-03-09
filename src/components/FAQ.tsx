@@ -90,7 +90,7 @@ export default function FAQ() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="bg-bg-card rounded-[--radius-xl] border border-border px-6 md:px-8 shadow-sm">
+          <div className="bg-bg-card rounded-3xl border border-border px-6 md:px-8 shadow-sm">
             {faqs.map((faq) => (
               <FAQItem key={faq.q} q={faq.q} a={faq.a} />
             ))}

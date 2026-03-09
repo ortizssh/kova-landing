@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 
 function ChatWidget() {
   return (
-    <div className="w-full max-w-[380px] bg-white rounded-[--radius-xl] shadow-lg border border-border overflow-hidden">
+    <div className="w-full max-w-[380px] bg-white rounded-3xl shadow-lg border border-border overflow-hidden">
       {/* Header */}
       <div className="bg-primary px-4 py-3 flex items-center gap-3">
         <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">
@@ -32,14 +32,14 @@ function ChatWidget() {
           <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
             K
           </div>
-          <div className="bg-white rounded-[--radius-md] rounded-bl-sm px-3 py-2 text-sm text-text-primary shadow-sm max-w-[260px]">
+          <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2 text-sm text-text-primary shadow-sm max-w-[260px]">
             ¡Hola! 👋 Soy tu asistente de compras. ¿En qué puedo ayudarte?
           </div>
         </div>
 
         {/* User message */}
         <div className="flex justify-end">
-          <div className="bg-primary text-white rounded-[--radius-md] rounded-br-sm px-3 py-2 text-sm max-w-[220px]">
+          <div className="bg-primary text-white rounded-xl rounded-br-sm px-3 py-2 text-sm max-w-[220px]">
             Busco algo para piel sensible
           </div>
         </div>
@@ -49,20 +49,20 @@ function ChatWidget() {
           <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
             K
           </div>
-          <div className="bg-white rounded-[--radius-md] rounded-bl-sm shadow-sm max-w-[280px] overflow-hidden">
+          <div className="bg-white rounded-xl rounded-bl-sm shadow-sm max-w-[280px] overflow-hidden">
             <div className="px-3 py-2 text-sm text-text-primary">
               ¡Tengo la opción perfecta para ti! 🧴
             </div>
             {/* Product card */}
             <div className="border-t border-border p-3">
-              <div className="w-full h-24 bg-gradient-to-br from-pink-100 to-purple-100 rounded-[--radius-sm] mb-2 flex items-center justify-center">
+              <div className="w-full h-24 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg mb-2 flex items-center justify-center">
                 <span className="text-3xl">🧴</span>
               </div>
               <p className="text-sm font-semibold text-text-primary">
                 Crema Hidratante Suave
               </p>
               <p className="text-sm font-bold text-primary mt-0.5">$24.990</p>
-              <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-[--radius-sm] hover:bg-primary-hover transition-colors">
+              <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
                 Agregar al carrito
               </button>
             </div>
@@ -74,7 +74,7 @@ function ChatWidget() {
           <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
             K
           </div>
-          <div className="bg-white rounded-[--radius-md] rounded-bl-sm px-3 py-2.5 shadow-sm flex gap-1 items-center">
+          <div className="bg-white rounded-xl rounded-bl-sm px-3 py-2.5 shadow-sm flex gap-1 items-center">
             <motion.span
               className="w-1.5 h-1.5 rounded-full bg-text-muted"
               animate={{ opacity: [0.3, 1, 0.3] }}
@@ -151,13 +151,13 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <a
                   href="https://app.heykova.io/register"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-[--radius-md] bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
                 >
                   Comenzar gratis
                 </a>
                 <a
                   href="#video"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-[--radius-md] border border-border text-text-primary font-semibold hover:bg-sage transition-colors text-base"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border text-text-primary font-semibold hover:bg-sage transition-colors text-base"
                 >
                   Ver demo
                 </a>
