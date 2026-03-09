@@ -131,9 +131,9 @@ export default function VoiceCalling() {
                 {/* Caller info */}
                 <div className="flex flex-col items-center pt-6 pb-4">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 flex items-center justify-center mb-4 ring-2 ring-white/10">
-                    <span className="text-3xl font-bold text-white/90">M</span>
+                    <span className="text-3xl font-bold text-white/90">K</span>
                   </div>
-                  <h3 className="text-white text-lg font-semibold">María González</h3>
+                  <h3 className="text-white text-lg font-semibold">Kova</h3>
                   <p className="text-white/50 text-sm mt-0.5">+56 9 8765 4321</p>
                   <div className="flex items-center gap-2 mt-2">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 function AnnotationLine({
@@ -37,79 +38,6 @@ function AnnotationLine({
   );
 }
 
-function ThemePreview({
-  name,
-  primary,
-  bg,
-  text,
-  accent,
-}: {
-  name: string;
-  primary: string;
-  bg: string;
-  text: string;
-  accent: string;
-}) {
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div
-        className="w-24 h-40 rounded-xl border border-border overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-        style={{ background: bg }}
-      >
-        {/* Mini header */}
-        <div
-          className="h-7 flex items-center justify-between px-2"
-          style={{ background: primary }}
-        >
-          <div className="w-4 h-4 rounded-full bg-white/30" />
-          <div className="flex gap-0.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-            <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-            <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-          </div>
-        </div>
-        {/* Mini messages */}
-        <div className="p-2 flex flex-col gap-1.5">
-          <div
-            className="h-2.5 w-14 rounded-full"
-            style={{ background: primary + "20" }}
-          />
-          <div
-            className="h-2.5 w-12 rounded-full ml-auto"
-            style={{ background: primary }}
-          />
-          {/* Mini product card */}
-          <div
-            className="rounded-sm p-1 mt-0.5"
-            style={{ background: primary + "10", border: `1px solid ${primary}20` }}
-          >
-            <div
-              className="h-6 w-full rounded-sm mb-1"
-              style={{ background: accent }}
-            />
-            <div
-              className="h-1.5 w-10 rounded-full"
-              style={{ background: primary + "40" }}
-            />
-          </div>
-          <div
-            className="h-6 w-full rounded-sm border flex items-center justify-center"
-            style={{ borderColor: primary + "30" }}
-          >
-            <div
-              className="h-1.5 w-8 rounded-full"
-              style={{ background: primary + "40" }}
-            />
-          </div>
-        </div>
-      </div>
-      <span className="text-xs font-semibold" style={{ color: text }}>
-        {name}
-      </span>
-    </div>
-  );
-}
-
 export default function WidgetShowcase() {
   return (
     <section className="py-16 md:py-24 bg-sage">
@@ -136,10 +64,44 @@ export default function WidgetShowcase() {
               <AnnotationLine label="Micrófono + adjuntar imagen" side="left" top="510px" />
               <AnnotationLine label="Barra de input" side="right" top="530px" />
 
-              {/* Widget mockup */}
-              <div className="w-[380px] bg-white rounded-3xl shadow-xl border border-border overflow-hidden">
+              {/* Widget mockup with color animation */}
+              <motion.div 
+                className="w-[380px] bg-white rounded-3xl shadow-xl border overflow-hidden"
+                animate={{
+                  borderColor: [
+                    "#6b5afc",
+                    "#10b981",
+                    "#f59e0b",
+                    "#ef4444",
+                    "#3b82f6",
+                    "#6b5afc",
+                  ],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
                 {/* Header */}
-                <div className="bg-primary px-5 py-4 flex items-center gap-3">
+                <motion.div 
+                  className="px-5 py-4 flex items-center gap-3"
+                  animate={{
+                    background: [
+                      "#6b5afc",
+                      "#10b981",
+                      "#f59e0b",
+                      "#ef4444",
+                      "#3b82f6",
+                      "#6b5afc",
+                    ],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">
                     K
                   </div>
@@ -155,15 +117,40 @@ export default function WidgetShowcase() {
                     <div className="w-2 h-2 rounded-full bg-white/30" />
                     <div className="w-2 h-2 rounded-full bg-white/30" />
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Messages area */}
                 <div className="p-5 flex flex-col gap-4 bg-[#f9f9fb]">
                   {/* Welcome */}
                   <div className="flex gap-2">
-                    <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
+                    <motion.div 
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                      animate={{
+                        background: [
+                          "rgba(107, 90, 252, 0.1)",
+                          "rgba(16, 185, 129, 0.1)",
+                          "rgba(245, 158, 11, 0.1)",
+                          "rgba(239, 68, 68, 0.1)",
+                          "rgba(59, 130, 246, 0.1)",
+                          "rgba(107, 90, 252, 0.1)",
+                        ],
+                        color: [
+                          "#6b5afc",
+                          "#10b981",
+                          "#f59e0b",
+                          "#ef4444",
+                          "#3b82f6",
+                          "#6b5afc",
+                        ],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    >
                       K
-                    </div>
+                    </motion.div>
                     <div className="bg-white rounded-lg px-4 py-2.5 text-sm text-text-primary shadow-sm">
                       ¡Hola! 👋 ¿En qué puedo ayudarte hoy?
                     </div>
@@ -171,15 +158,46 @@ export default function WidgetShowcase() {
 
                   {/* Quick replies */}
                   <div className="flex gap-2 flex-wrap ml-9">
-                    <button className="px-3.5 py-1.5 rounded-full border border-primary/30 text-primary text-xs font-medium bg-primary/5 hover:bg-primary/10 transition-colors">
-                      Novedades
-                    </button>
-                    <button className="px-3.5 py-1.5 rounded-full border border-primary/30 text-primary text-xs font-medium bg-primary/5 hover:bg-primary/10 transition-colors">
-                      Ofertas
-                    </button>
-                    <button className="px-3.5 py-1.5 rounded-full border border-primary/30 text-primary text-xs font-medium bg-primary/5 hover:bg-primary/10 transition-colors">
-                      Ayuda
-                    </button>
+                    {["Novedades", "Ofertas", "Ayuda"].map((btn) => (
+                      <motion.button
+                        key={btn}
+                        className="px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors"
+                        animate={{
+                          borderColor: [
+                            "#6b5afc4d",
+                            "#10b9814d",
+                            "#f59e0b4d",
+                            "#ef44444d",
+                            "#3b82f64d",
+                            "#6b5afc4d",
+                          ],
+                          color: [
+                            "#6b5afc",
+                            "#10b981",
+                            "#f59e0b",
+                            "#ef4444",
+                            "#3b82f6",
+                            "#6b5afc",
+                          ],
+                          background: [
+                            "rgba(107, 90, 252, 0.05)",
+                            "rgba(16, 185, 129, 0.05)",
+                            "rgba(245, 158, 11, 0.05)",
+                            "rgba(239, 68, 68, 0.05)",
+                            "rgba(59, 130, 246, 0.05)",
+                            "rgba(107, 90, 252, 0.05)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                        style={{ border: "1px solid" }}
+                      >
+                        {btn}
+                      </motion.button>
+                    ))}
                   </div>
 
                   {/* Product card */}
@@ -210,9 +228,26 @@ export default function WidgetShowcase() {
                         ))}
                         <span className="text-[10px] text-text-muted ml-0.5">(128)</span>
                       </div>
-                      <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
+                      <motion.button 
+                        className="mt-2 w-full py-1.5 text-white text-xs font-semibold rounded-lg"
+                        animate={{
+                          background: [
+                            "#6b5afc",
+                            "#10b981",
+                            "#f59e0b",
+                            "#ef4444",
+                            "#3b82f6",
+                            "#6b5afc",
+                          ],
+                        }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      >
                         Agregar al carrito
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
 
@@ -236,11 +271,55 @@ export default function WidgetShowcase() {
                         </p>
                         <p className="text-[11px] text-text-muted">Qty: 1</p>
                       </div>
-                      <span className="text-xs font-semibold text-primary">$49.990</span>
+                      <motion.span 
+                        className="text-xs font-semibold"
+                        animate={{
+                          color: [
+                            "#6b5afc",
+                            "#10b981",
+                            "#f59e0b",
+                            "#ef4444",
+                            "#3b82f6",
+                            "#6b5afc",
+                          ],
+                        }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      >
+                        $49.990
+                      </motion.span>
                     </div>
-                    <button className="mt-2 w-full py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-lg">
+                    <motion.button 
+                      className="mt-2 w-full py-1.5 text-xs font-semibold rounded-lg"
+                      animate={{
+                        background: [
+                          "rgba(107, 90, 252, 0.1)",
+                          "rgba(16, 185, 129, 0.1)",
+                          "rgba(245, 158, 11, 0.1)",
+                          "rgba(239, 68, 68, 0.1)",
+                          "rgba(59, 130, 246, 0.1)",
+                          "rgba(107, 90, 252, 0.1)",
+                        ],
+                        color: [
+                          "#6b5afc",
+                          "#10b981",
+                          "#f59e0b",
+                          "#ef4444",
+                          "#3b82f6",
+                          "#6b5afc",
+                        ],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    >
                       Ir al checkout →
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
 
@@ -262,42 +341,32 @@ export default function WidgetShowcase() {
                   <div className="flex-1 bg-[#f5f5f8] rounded-full px-4 py-2 text-xs text-text-muted flex items-center">
                     Escribe un mensaje...
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary-hover transition-colors cursor-pointer">
+                  <motion.div 
+                    className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
+                    animate={{
+                      background: [
+                        "#6b5afc",
+                        "#10b981",
+                        "#f59e0b",
+                        "#ef4444",
+                        "#3b82f6",
+                        "#6b5afc",
+                      ],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
                       <line x1="22" y1="2" x2="11" y2="13" />
                       <polygon points="22 2 15 22 11 13 2 9 22 2" />
                     </svg>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Theme previews */}
-        <AnimatedSection delay={0.3} className="mt-12">
-          <div className="flex justify-center gap-10">
-            <ThemePreview
-              name="Purple"
-              primary="#6b5afc"
-              bg="#f9f9fb"
-              text="#6b5afc"
-              accent="#ede9fe"
-            />
-            <ThemePreview
-              name="Dark"
-              primary="#1a1a2e"
-              bg="#1a1a2e"
-              text="#64648c"
-              accent="#2a2a40"
-            />
-            <ThemePreview
-              name="Green"
-              primary="#10b981"
-              bg="#f0fdf4"
-              text="#10b981"
-              accent="#d1fae5"
-            />
           </div>
         </AnimatedSection>
       </div>

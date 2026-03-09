@@ -57,27 +57,31 @@ function ChatWidget() {
     };
   }, []);
 
+  const showCall = step >= 8;
+
   return (
-    <div className="w-full max-w-[380px] bg-white rounded-3xl shadow-lg border border-border overflow-hidden">
-      {/* Header */}
-      <div className="bg-primary px-4 py-3 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">K</div>
-        <div className="flex-1">
-          <div className="text-white font-semibold text-sm">Kova</div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
-            <span className="text-white/80 text-xs">En línea</span>
+    <div className="relative w-full max-w-[380px]">
+      {/* Chat Widget */}
+      <div className="w-full bg-white rounded-3xl shadow-lg border border-border overflow-hidden">
+        {/* Header */}
+        <div className="bg-primary px-4 py-3 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">K</div>
+          <div className="flex-1">
+            <div className="text-white font-semibold text-sm">Kova</div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+              <span className="text-white/80 text-xs">En línea</span>
+            </div>
+          </div>
+          <div className="flex gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-white/40" />
+            <div className="w-2 h-2 rounded-full bg-white/40" />
+            <div className="w-2 h-2 rounded-full bg-white/40" />
           </div>
         </div>
-        <div className="flex gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-white/40" />
-          <div className="w-2 h-2 rounded-full bg-white/40" />
-          <div className="w-2 h-2 rounded-full bg-white/40" />
-        </div>
-      </div>
 
-      {/* Messages */}
-      <div className="p-4 flex flex-col gap-3 bg-[#f9f9fb] min-h-[320px]">
+        {/* Messages */}
+        <div className="p-4 flex flex-col gap-3 bg-[#f9f9fb] min-h-[320px]">
         <AnimatePresence mode="popLayout">
           {/* Step 0: typing for welcome */}
           {step === 0 && <TypingDots key="typing-0" />}
@@ -179,6 +183,58 @@ function ChatWidget() {
           </svg>
         </div>
       </div>
+      </div>
+
+      {/* Call overlay – slides in from right, sits on top */}
+      <AnimatePresence>
+        {showCall && (
+          <motion.div
+            key="call-overlay"
+            initial={{ opacity: 0, x: 40, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="absolute -right-4 top-8 z-10 w-[220px]"
+          >
+            <div className="bg-gradient-to-b from-[#1c1c1e] to-[#2c2c2e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 p-5 flex flex-col items-center gap-3">
+              {/* Avatar */}
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 flex items-center justify-center ring-2 ring-white/10">
+                <span className="text-2xl font-bold text-white/90">K</span>
+              </div>
+              {/* Info */}
+              <div className="text-center">
+                <h3 className="text-white text-sm font-semibold">Kova</h3>
+                <div className="flex items-center justify-center gap-1.5 mt-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-green-400 text-xs font-mono">03:42</span>
+                </div>
+              </div>
+              {/* Waveform */}
+              <div className="flex items-center justify-center gap-[2px] h-[24px]">
+                {[10, 16, 7, 20, 12, 18, 8, 14, 20, 10, 16].map((h, i) => (
+                  <motion.div
+                    key={i}
+                    className="w-[3px] rounded-full bg-primary/70"
+                    animate={{ height: [`${h}px`, `${h * 0.4}px`, `${h}px`] }}
+                    transition={{ duration: 0.8 + i * 0.05, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                ))}
+              </div>
+              {/* Controls */}
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" opacity="0.7"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" /><path d="M19.07 4.93a10 10 0 010 14.14" /></svg>
+                </div>
+                <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" opacity="0.7"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
+                </div>
+                <div className="w-11 h-11 rounded-full bg-red-500 flex items-center justify-center shadow-lg shadow-red-500/30">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-[135deg]"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -192,23 +248,23 @@ export default function Hero() {
           <div>
             <AnimatedSection>
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Asistente de ventas con IA para e-commerce
+                Para tiendas Shopify y WooCommerce
               </span>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
               <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
-                Convierte visitantes en compradores con{" "}
-                <span className="text-primary">IA conversacional</span>
+                Un vendedor que atiende, recomienda y{" "}
+                <span className="text-primary">cierra ventas por ti</span>
+                {" "}— 24/7
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
-                Kova es un asistente de compras con inteligencia artificial que
-                se integra en tu tienda Shopify o WooCommerce. Recomienda
-                productos, gestiona el carrito y atiende llamadas telefónicas
-                reales con todo el contexto de la conversación — 24/7.
+                Tus clientes preguntan, abandonan el carrito y se van sin comprar.
+                Kova los atiende por chat y los llama por teléfono con voz IA —
+                con todo el contexto de tu catálogo. Sin contratar gente. Sin perder ventas.
               </p>
             </AnimatedSection>
 
@@ -216,11 +272,11 @@ export default function Hero() {
               <div className="flex flex-wrap gap-3 mb-6">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                  Chat con IA
+                  Chat que vende
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                  Llamadas telefónicas reales
+                  Llamadas con voz IA
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
@@ -235,7 +291,7 @@ export default function Hero() {
                   href="https://app.heykova.io/register"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
                 >
-                  Comenzar gratis
+                  Instálalo gratis en tu tienda
                 </a>
                 <a
                   href="#video"
@@ -245,7 +301,7 @@ export default function Hero() {
                 </a>
               </div>
               <p className="text-sm text-text-muted">
-                Trial de 14 días gratis · Sin tarjeta de crédito
+                Setup en 5 minutos · 14 días gratis · Sin tarjeta
               </p>
             </AnimatedSection>
           </div>

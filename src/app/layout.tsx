@@ -10,6 +10,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: "Kova — Asistente de Ventas con IA para Shopify y WooCommerce",
   description:
     "Kova es un asistente de compras con inteligencia artificial que se integra en tu tienda Shopify o WooCommerce. Búsqueda semántica, gestión de carrito y analytics de conversión.",
