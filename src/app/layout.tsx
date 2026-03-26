@@ -40,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={plusJakarta.variable}>
+      <head>
+        <script defer src="https://dustkey-os.vercel.app/t.js" data-domain="heykova.io"></script>
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
