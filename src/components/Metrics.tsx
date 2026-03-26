@@ -41,20 +41,48 @@ function Counter({
   );
 }
 
-const metrics = [
-  { value: 2195, suffix: "+", label: "Recomendaciones AI" },
-  { value: 1808, suffix: "+", label: "Sesiones de chat" },
-  { value: 10, suffix: "%", label: "Tasa de conversión", isDecimal: true },
-  { prefix: "<", value: 20, suffix: " min", label: "De recomendación a compra" },
-];
+// Fallback metrics in case API is down
+const FALLBACK = {
+  total_recommendations: 2195,
+  total_sessions: 1808,
+  conversion_rate: 10,
+  avg_minutes_to_conversion: 20,
+};
+
+const API_URL = "https://naay-agent-app1763504937.azurewebsites.net/api/public-metrics";
 
 export default function Metrics() {
+  const [data, setData] = useState(FALLBACK);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((r) => r.json())
+      .then((d) => {
+        if (d && d.total_recommendations > 0) {
+          setData({
+            total_recommendations: d.total_recommendations,
+            total_sessions: d.total_sessions,
+            conversion_rate: d.conversion_rate,
+            avg_minutes_to_conversion: d.avg_minutes_to_conversion,
+          });
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const metrics = [
+    { value: data.total_recommendations, suffix: "+", label: "Recomendaciones AI" },
+    { value: data.total_sessions, suffix: "+", label: "Sesiones de chat" },
+    { value: data.conversion_rate, suffix: "%", label: "Tasa de conversión", isStatic: true },
+    { prefix: "<", value: data.avg_minutes_to_conversion, suffix: " min", label: "De recomendación a compra" },
+  ];
+
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-sage">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <AnimatedSection className="text-center mb-8 sm:mb-10">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium">
-            Métricas reales de early access
+            Métricas reales — actualizadas en tiempo real
           </span>
         </AnimatedSection>
 
@@ -63,7 +91,7 @@ export default function Metrics() {
             <AnimatedSection key={m.label} delay={i * 0.1}>
               <div className="bg-bg-card rounded-2xl p-4 sm:p-6 text-center shadow-sm border border-border">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
-                  {m.isDecimal ? (
+                  {m.isStatic ? (
                     <span>{m.prefix}{m.value}{m.suffix}</span>
                   ) : (
                     <Counter
