@@ -2,44 +2,44 @@
 
 import { Plug, Palette, TrendingUp } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-
-const steps = [
-  {
-    icon: Plug,
-    title: "Conecta tu tienda",
-    description:
-      "Instala Kova en tu Shopify o WooCommerce en minutos. Sincronización automática de catálogo con embeddings semánticos.",
-  },
-  {
-    icon: Palette,
-    title: "Personaliza tu asistente",
-    description:
-      "Configura colores, mensajes, tono de voz, idioma y comportamiento del AI. Se adapta a la identidad de tu marca.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Vende más con IA",
-    description:
-      "El asistente atiende a tus clientes 24/7: recomienda productos, gestiona el carrito y genera conversiones medibles.",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 export default function HowItWorks() {
+  const { t } = useI18n();
+
+  const steps = [
+    {
+      icon: Plug,
+      title: t("how.step1.title"),
+      description: t("how.step1.desc"),
+    },
+    {
+      icon: Palette,
+      title: t("how.step2.title"),
+      description: t("how.step2.desc"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("how.step3.title"),
+      description: t("how.step3.desc"),
+    },
+  ];
+
   return (
     <section id="how-it-works" className="py-12 sm:py-16 md:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <AnimatedSection className="text-center mb-10 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Cómo funciona
+            {t("how.title")}
           </h2>
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl mx-auto">
-            Tres pasos para empezar a vender más con inteligencia artificial
+            {t("how.subtitle")}
           </p>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           {steps.map((step, i) => (
-            <AnimatedSection key={step.title} delay={i * 0.15}>
+            <AnimatedSection key={i} delay={i * 0.15}>
               <div className="text-center">
                 <div className="relative mb-6 inline-block">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">

@@ -1,31 +1,36 @@
-import KovaLogo from "./KovaLogo";
+"use client";
 
-const columns = [
-  {
-    title: "Producto",
-    links: [
-      { label: "Características", href: "#features" },
-      { label: "Precios", href: "#pricing" },
-      { label: "Demo", href: "#video" },
-    ],
-  },
-  {
-    title: "Recursos",
-    links: [
-      { label: "Documentación", href: "#" },
-      { label: "FAQ", href: "#faq" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Términos de servicio", href: "#" },
-      { label: "Política de privacidad", href: "#" },
-    ],
-  },
-];
+import KovaLogo from "./KovaLogo";
+import { useI18n } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useI18n();
+
+  const columns = [
+    {
+      title: t("footer.product"),
+      links: [
+        { label: t("nav.features"), href: "#features" },
+        { label: t("nav.pricing"), href: "#pricing" },
+        { label: "Demo", href: "#video" },
+      ],
+    },
+    {
+      title: t("footer.resources"),
+      links: [
+        { label: t("footer.docs"), href: "#" },
+        { label: t("nav.faq"), href: "#faq" },
+      ],
+    },
+    {
+      title: t("footer.legal"),
+      links: [
+        { label: t("footer.terms"), href: "#" },
+        { label: t("footer.privacy"), href: "#" },
+      ],
+    },
+  ];
+
   return (
     <footer className="border-t border-border bg-white">
       <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
@@ -34,7 +39,7 @@ export default function Footer() {
           <div>
             <KovaLogo />
             <p className="mt-4 text-sm text-text-muted leading-relaxed">
-              Asistente de ventas con IA para e-commerce.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -62,7 +67,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-text-muted">
-            &copy; 2026 Kova. Todos los derechos reservados.
+            &copy; 2026 Kova. {t("footer.copyright")}
           </p>
         </div>
       </div>

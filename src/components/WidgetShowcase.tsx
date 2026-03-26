@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { useI18n } from "@/lib/i18n";
 
 function AnnotationLine({
   label,
@@ -39,15 +40,17 @@ function AnnotationLine({
 }
 
 export default function WidgetShowcase() {
+  const { t } = useI18n();
+
   return (
     <section className="py-16 md:py-24 bg-sage">
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Un widget que se adapta a tu marca
+            {t("widget.title")}
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Se adapta a la identidad de tu marca
+            {t("widget.subtitle")}
           </p>
         </AnimatedSection>
 
@@ -65,7 +68,7 @@ export default function WidgetShowcase() {
               <AnnotationLine label="Barra de input" side="right" top="530px" />
 
               {/* Widget mockup with color animation */}
-              <motion.div 
+              <motion.div
                 className="w-[380px] bg-white rounded-3xl shadow-xl border overflow-hidden"
                 animate={{
                   borderColor: [
@@ -84,7 +87,7 @@ export default function WidgetShowcase() {
                 }}
               >
                 {/* Header */}
-                <motion.div 
+                <motion.div
                   className="px-5 py-4 flex items-center gap-3"
                   animate={{
                     background: [
@@ -123,7 +126,7 @@ export default function WidgetShowcase() {
                 <div className="p-5 flex flex-col gap-4 bg-[#f9f9fb]">
                   {/* Welcome */}
                   <div className="flex gap-2">
-                    <motion.div 
+                    <motion.div
                       className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
                       animate={{
                         background: [
@@ -228,7 +231,7 @@ export default function WidgetShowcase() {
                         ))}
                         <span className="text-[10px] text-text-muted ml-0.5">(128)</span>
                       </div>
-                      <motion.button 
+                      <motion.button
                         className="mt-2 w-full py-1.5 text-white text-xs font-semibold rounded-lg"
                         animate={{
                           background: [
@@ -271,7 +274,7 @@ export default function WidgetShowcase() {
                         </p>
                         <p className="text-[11px] text-text-muted">Qty: 1</p>
                       </div>
-                      <motion.span 
+                      <motion.span
                         className="text-xs font-semibold"
                         animate={{
                           color: [
@@ -292,7 +295,7 @@ export default function WidgetShowcase() {
                         $49.990
                       </motion.span>
                     </div>
-                    <motion.button 
+                    <motion.button
                       className="mt-2 w-full py-1.5 text-xs font-semibold rounded-lg"
                       animate={{
                         background: [
@@ -341,7 +344,7 @@ export default function WidgetShowcase() {
                   <div className="flex-1 bg-[#f5f5f8] rounded-full px-4 py-2 text-xs text-text-muted flex items-center">
                     Escribe un mensaje...
                   </div>
-                  <motion.div 
+                  <motion.div
                     className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
                     animate={{
                       background: [

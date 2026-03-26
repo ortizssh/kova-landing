@@ -3,6 +3,7 @@
 import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { useI18n } from "@/lib/i18n";
 
 interface PlanFeature {
   text: string;
@@ -20,61 +21,6 @@ interface Plan {
   style: "outline" | "filled" | "filled-shadow" | "outline-dark";
 }
 
-const plans: Plan[] = [
-  {
-    name: "Starter",
-    price: "$149",
-    period: "USD/mes",
-    features: [
-      { text: "1,000 mensajes AI/mes", included: true },
-      { text: "Hasta 500 productos", included: true },
-      { text: "Búsqueda semántica", included: true },
-      { text: "Gestión de carrito", included: true },
-      { text: "Analytics de conversión", included: true },
-      { text: "Branding personalizado", included: false },
-      { text: "Agentes de voz", included: false },
-    ],
-    cta: "Comenzar ahora",
-    ctaHref: "https://app.heykova.io/register",
-    style: "filled",
-  },
-  {
-    name: "Professional",
-    price: "$349",
-    period: "USD/mes",
-    highlighted: true,
-    features: [
-      { text: "10,000 mensajes AI/mes", included: true },
-      { text: "Hasta 5,000 productos", included: true },
-      { text: "Búsqueda semántica", included: true },
-      { text: "Gestión de carrito", included: true },
-      { text: "Analytics de conversión", included: true },
-      { text: "Branding personalizado", included: true },
-      { text: "Soporte prioritario", included: true },
-      { text: "100 llamadas de voz/mes", included: true },
-    ],
-    cta: "Elegir Professional",
-    ctaHref: "https://app.heykova.io/register",
-    style: "filled-shadow",
-  },
-  {
-    name: "Enterprise",
-    price: "$599",
-    period: "USD/mes",
-    features: [
-      { text: "Mensajes ilimitados", included: true },
-      { text: "Productos ilimitados", included: true },
-      { text: "Todas las funcionalidades", included: true },
-      { text: "Acceso a API", included: true },
-      { text: "Llamadas de voz ilimitadas", included: true },
-      { text: "Soporte prioritario", included: true },
-    ],
-    cta: "Contactar ventas",
-    ctaHref: "https://app.heykova.io/register",
-    style: "outline-dark",
-  },
-];
-
 function ctaClasses(style: Plan["style"]) {
   const base =
     "w-full py-3 rounded-xl font-semibold text-sm transition-colors text-center block";
@@ -91,18 +37,75 @@ function ctaClasses(style: Plan["style"]) {
 }
 
 export default function Pricing() {
+  const { t } = useI18n();
+
+  const plans: Plan[] = [
+    {
+      name: "Starter",
+      price: "$149",
+      period: "USD/mes",
+      features: [
+        { text: `1,000 ${t("plan.messages")}`, included: true },
+        { text: `500 ${t("plan.products")}`, included: true },
+        { text: t("plan.semanticSearch"), included: true },
+        { text: t("plan.cartManagement"), included: true },
+        { text: t("plan.conversionAnalytics"), included: true },
+        { text: t("plan.customBranding"), included: false },
+        { text: t("plan.voiceAgents"), included: false },
+      ],
+      cta: t("pricing.starter.cta"),
+      ctaHref: "https://app.heykova.io/register",
+      style: "filled",
+    },
+    {
+      name: "Professional",
+      price: "$349",
+      period: "USD/mes",
+      highlighted: true,
+      features: [
+        { text: `10,000 ${t("plan.messages")}`, included: true },
+        { text: `5,000 ${t("plan.products")}`, included: true },
+        { text: t("plan.semanticSearch"), included: true },
+        { text: t("plan.cartManagement"), included: true },
+        { text: t("plan.conversionAnalytics"), included: true },
+        { text: t("plan.customBranding"), included: true },
+        { text: t("plan.prioritySupport"), included: true },
+        { text: `100 ${t("plan.voiceCalls")}`, included: true },
+      ],
+      cta: t("pricing.pro.cta"),
+      ctaHref: "https://app.heykova.io/register",
+      style: "filled-shadow",
+    },
+    {
+      name: "Enterprise",
+      price: "$599",
+      period: "USD/mes",
+      features: [
+        { text: t("plan.unlimitedMessages"), included: true },
+        { text: t("plan.unlimitedProducts"), included: true },
+        { text: t("plan.allFeatures"), included: true },
+        { text: t("plan.apiAccess"), included: true },
+        { text: t("plan.unlimitedVoice"), included: true },
+        { text: t("plan.prioritySupport"), included: true },
+      ],
+      cta: t("pricing.enterprise.cta"),
+      ctaHref: "https://app.heykova.io/register",
+      style: "outline-dark",
+    },
+  ];
+
   return (
     <section id="pricing" className="py-16 md:py-24 bg-bg-warm">
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 text-sm font-medium mb-4">
-            Precio de lanzamiento — cupos limitados
+            {t("pricing.badge")}
           </span>
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Invierte menos de lo que cuesta un café al día
+            {t("pricing.title")}
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Una sola venta recuperada paga tu plan del mes entero
+            {t("pricing.subtitle")}
           </p>
         </AnimatedSection>
 
@@ -169,7 +172,7 @@ export default function Pricing() {
 
         <AnimatedSection delay={0.5} className="text-center mt-10">
           <p className="text-sm text-text-muted">
-            Todos los planes incluyen 7 días de prueba. Precios en USD.
+            {t("pricing.disclaimer")}
           </p>
         </AnimatedSection>
       </div>

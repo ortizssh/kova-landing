@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -43,7 +44,7 @@ export default function RootLayout({
       <head>
         <script defer src="https://dustkey-os.vercel.app/t.js" data-domain="heykova.io"></script>
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased"><Providers>{children}</Providers></body>
     </html>
   );
 }

@@ -2,18 +2,20 @@
 
 import { Play } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { useI18n } from "@/lib/i18n";
 
 export default function VideoDemo() {
+  const { t } = useI18n();
+
   return (
     <section id="video" className="py-16 md:py-24 bg-sage">
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Mira a Kova en acción
+            {t("video.title")}
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Descubre cómo el asistente interactúa con tus clientes en tiempo
-            real
+            {t("video.subtitle")}
           </p>
         </AnimatedSection>
 
@@ -104,7 +106,7 @@ export default function VideoDemo() {
             href="https://app.heykova.io/register"
             className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
           >
-            Quiero esto en mi tienda
+            {t("video.cta")}
           </a>
         </AnimatedSection>
       </div>

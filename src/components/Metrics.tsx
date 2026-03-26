@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { useI18n } from "@/lib/i18n";
 
 function Counter({
   target,
@@ -52,6 +53,7 @@ const FALLBACK = {
 const API_URL = "https://naay-agent-app1763504937.azurewebsites.net/api/public-metrics";
 
 export default function Metrics() {
+  const { t } = useI18n();
   const [data, setData] = useState(FALLBACK);
 
   useEffect(() => {
@@ -71,10 +73,10 @@ export default function Metrics() {
   }, []);
 
   const metrics = [
-    { value: data.ai_messages, suffix: "+", label: "Mensajes AI enviados" },
-    { value: data.total_recommendations, suffix: "+", label: "Recomendaciones de producto" },
-    { value: data.conversion_rate, suffix: "%", label: "Tasa de conversión", isStatic: true },
-    { prefix: "<", value: data.avg_minutes_to_conversion, suffix: " min", label: "De recomendación a venta" },
+    { value: data.ai_messages, suffix: "+", label: t("metrics.aiMessages") },
+    { value: data.total_recommendations, suffix: "+", label: t("metrics.recommendations") },
+    { value: data.conversion_rate, suffix: "%", label: t("metrics.conversionRate"), isStatic: true },
+    { prefix: "<", value: data.avg_minutes_to_conversion, suffix: " min", label: t("metrics.timeToSale") },
   ];
 
   return (
@@ -82,13 +84,13 @@ export default function Metrics() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <AnimatedSection className="text-center mb-8 sm:mb-10">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium">
-            Métricas reales — actualizadas en tiempo real
+            {t("metrics.badge")}
           </span>
         </AnimatedSection>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {metrics.map((m, i) => (
-            <AnimatedSection key={m.label} delay={i * 0.1}>
+            <AnimatedSection key={i} delay={i * 0.1}>
               <div className="bg-bg-card rounded-2xl p-4 sm:p-6 text-center shadow-sm border border-border">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
                   {m.isStatic ? (

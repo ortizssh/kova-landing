@@ -2,8 +2,11 @@
 
 import { Shield } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { useI18n } from "@/lib/i18n";
 
 export default function Guarantee() {
+  const { t } = useI18n();
+
   return (
     <section className="py-12 md:py-16">
       <div className="mx-auto max-w-[800px] px-6">
@@ -13,14 +16,13 @@ export default function Guarantee() {
               <Shield className="w-8 h-8 text-primary" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
-              Garantía de 30 días — Sin riesgo
+              {t("guarantee.title")}
             </h2>
             <p className="text-text-secondary text-base md:text-lg max-w-xl mx-auto mb-2 leading-relaxed">
-              Si en los primeros 30 días no ves un impacto real en tus conversiones,
-              te devolvemos el 100% de tu dinero. Sin preguntas, sin letra chica.
+              {t("guarantee.desc")}
             </p>
             <p className="text-sm text-text-muted">
-              Creemos tanto en Kova que asumimos todo el riesgo por ti.
+              {t("guarantee.note")}
             </p>
           </div>
         </AnimatedSection>

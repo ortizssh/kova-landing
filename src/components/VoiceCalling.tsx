@@ -2,29 +2,7 @@
 
 import { Phone, MessageSquare, Brain, BarChart3 } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-
-const points = [
-  {
-    icon: Phone,
-    title: "Llamadas reales entrantes y salientes",
-    desc: "El agente de voz atiende y realiza llamadas a números telefónicos reales. Tus clientes llaman al número de tu tienda y Kova contesta — como un agente humano.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Continuidad de contexto total",
-    desc: "Si un cliente chateó primero y luego llama, el agente de voz sabe exactamente qué productos vio, qué preguntó y qué tiene en el carrito.",
-  },
-  {
-    icon: Brain,
-    title: "Misma inteligencia, diferente canal",
-    desc: "El mismo knowledge base, catálogo y personalidad de tu marca — ahora también por teléfono. Powered by Retell AI.",
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics unificados",
-    desc: "Las interacciones de voz se registran junto a las del chat. Un solo dashboard para medir todo el impacto de tu asistente.",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 function WaveformBar({ height, delay }: { height: number; delay: number }) {
   return (
@@ -40,6 +18,31 @@ function WaveformBar({ height, delay }: { height: number; delay: number }) {
 }
 
 export default function VoiceCalling() {
+  const { t } = useI18n();
+
+  const points = [
+    {
+      icon: Phone,
+      title: t("voice.p1.title"),
+      desc: t("voice.p1.desc"),
+    },
+    {
+      icon: MessageSquare,
+      title: t("voice.p2.title"),
+      desc: t("voice.p2.desc"),
+    },
+    {
+      icon: Brain,
+      title: t("voice.p3.title"),
+      desc: t("voice.p3.desc"),
+    },
+    {
+      icon: BarChart3,
+      title: t("voice.p4.title"),
+      desc: t("voice.p4.desc"),
+    },
+  ];
+
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
@@ -48,16 +51,13 @@ export default function VoiceCalling() {
           <AnimatedSection>
             <div>
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
-                Nuevo
+                {t("voice.badge")}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4 leading-tight">
-                Llamadas telefónicas reales con IA — con todo el contexto
+                {t("voice.title")}
               </h2>
               <p className="text-text-secondary text-base sm:text-lg mb-8">
-                Kova no solo chatea. Tu asistente atiende y realiza llamadas
-                telefónicas reales — no VoIP, no chat de voz — llamadas a
-                números reales. Y lo hace con todo el historial de la
-                conversación. Sin repetir, sin fricción.
+                {t("voice.subtitle")}
               </p>
 
               <div className="flex flex-col gap-6">
@@ -79,12 +79,12 @@ export default function VoiceCalling() {
               </div>
 
               <p className="mt-8 text-sm text-text-muted">
-                Disponible en planes Professional y Enterprise.{" "}
+                {t("voice.plans")}{" "}
                 <a
                   href="#pricing"
                   className="text-primary font-medium hover:underline"
                 >
-                  Ver planes →
+                  {t("voice.seePlans")}
                 </a>
               </p>
             </div>

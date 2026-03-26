@@ -3,16 +3,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import KovaLogo from "./KovaLogo";
-
-const links = [
-  { label: "Características", href: "#features" },
-  { label: "Cómo funciona", href: "#how-it-works" },
-  { label: "Precios", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t, locale, setLocale } = useI18n();
+
+  const links = [
+    { label: t("nav.features"), href: "#features" },
+    { label: t("nav.howItWorks"), href: "#how-it-works" },
+    { label: t("nav.pricing"), href: "#pricing" },
+    { label: t("nav.faq"), href: "#faq" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-border">
@@ -39,13 +41,19 @@ export default function Navbar() {
             href="https://app.heykova.io/login"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-sage transition-colors"
           >
-            Iniciar sesión
+            {t("nav.login")}
           </a>
+          <button
+            onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border text-text-secondary text-xs font-bold hover:bg-sage transition-colors"
+          >
+            {locale === 'es' ? 'EN' : 'ES'}
+          </button>
           <a
             href="https://app.heykova.io/register"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
           >
-            Comenzar ahora
+            {t("nav.cta")}
           </a>
         </div>
 
@@ -78,13 +86,19 @@ export default function Navbar() {
                 href="https://app.heykova.io/login"
                 className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-sage transition-colors"
               >
-                Iniciar sesión
+                {t("nav.login")}
               </a>
+              <button
+                onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
+                className="inline-flex items-center justify-center w-full py-3 rounded-xl border border-border text-text-secondary text-xs font-bold hover:bg-sage transition-colors"
+              >
+                {locale === 'es' ? 'EN' : 'ES'}
+              </button>
               <a
                 href="https://app.heykova.io/register"
                 className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors"
               >
-                Comenzar ahora
+                {t("nav.cta")}
               </a>
             </div>
           </div>
