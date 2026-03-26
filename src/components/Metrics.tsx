@@ -43,10 +43,10 @@ function Counter({
 
 // Fallback metrics in case API is down
 const FALLBACK = {
-  total_recommendations: 2195,
-  total_sessions: 1808,
-  conversion_rate: 10,
-  avg_minutes_to_conversion: 20,
+  ai_messages: 5400,
+  total_recommendations: 2921,
+  conversion_rate: 9.9,
+  avg_minutes_to_conversion: 18,
 };
 
 const API_URL = "https://naay-agent-app1763504937.azurewebsites.net/api/public-metrics";
@@ -60,8 +60,8 @@ export default function Metrics() {
       .then((d) => {
         if (d && d.total_recommendations > 0) {
           setData({
+            ai_messages: d.ai_messages,
             total_recommendations: d.total_recommendations,
-            total_sessions: d.total_sessions,
             conversion_rate: d.conversion_rate,
             avg_minutes_to_conversion: d.avg_minutes_to_conversion,
           });
@@ -71,10 +71,10 @@ export default function Metrics() {
   }, []);
 
   const metrics = [
-    { value: data.total_recommendations, suffix: "+", label: "Recomendaciones AI" },
-    { value: data.total_sessions, suffix: "+", label: "Sesiones de chat" },
+    { value: data.ai_messages, suffix: "+", label: "Mensajes AI enviados" },
+    { value: data.total_recommendations, suffix: "+", label: "Recomendaciones de producto" },
     { value: data.conversion_rate, suffix: "%", label: "Tasa de conversión", isStatic: true },
-    { prefix: "<", value: data.avg_minutes_to_conversion, suffix: " min", label: "De recomendación a compra" },
+    { prefix: "<", value: data.avg_minutes_to_conversion, suffix: " min", label: "De recomendación a venta" },
   ];
 
   return (
