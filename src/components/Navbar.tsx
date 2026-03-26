@@ -34,6 +34,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <button
+            onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
+            className="text-lg hover:scale-110 transition-transform cursor-pointer"
+            aria-label="Switch language"
+          >
+            {locale === 'es' ? '🇺🇸' : '🇲🇽'}
+          </button>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -43,13 +50,6 @@ export default function Navbar() {
           >
             {t("nav.login")}
           </a>
-          <button
-            onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border hover:bg-sage transition-colors text-lg"
-            aria-label="Switch language"
-          >
-            {locale === 'es' ? '🇺🇸' : '🇲🇽'}
-          </button>
           <a
             href="https://app.heykova.io/register"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
