@@ -301,7 +301,7 @@ export default function Hero() {
                 </a>
               </div>
               <p className="text-sm text-text-muted">
-                Setup en 5 minutos · 7 días de prueba · Sin tarjeta
+                Setup en 5 minutos · 7 días de prueba
               </p>
             </AnimatedSection>
           </div>

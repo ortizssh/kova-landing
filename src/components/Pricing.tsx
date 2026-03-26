@@ -166,8 +166,7 @@ export default function Pricing() {
 
         <AnimatedSection delay={0.5} className="text-center mt-10">
           <p className="text-sm text-text-muted">
-            Todos los planes incluyen 7 días de prueba. Sin tarjeta de
-            crédito. Precios en USD.
+            Todos los planes incluyen 7 días de prueba. Precios en USD.
           </p>
         </AnimatedSection>
       </div>
