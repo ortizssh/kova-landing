@@ -45,9 +45,10 @@ export default function Navbar() {
           </a>
           <button
             onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border text-text-secondary text-xs font-bold hover:bg-sage transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border hover:bg-sage transition-colors text-lg"
+            aria-label="Switch language"
           >
-            {locale === 'es' ? 'EN' : 'ES'}
+            {locale === 'es' ? '🇺🇸' : '🇲🇽'}
           </button>
           <a
             href="https://app.heykova.io/register"
@@ -90,9 +91,11 @@ export default function Navbar() {
               </a>
               <button
                 onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
-                className="inline-flex items-center justify-center w-full py-3 rounded-xl border border-border text-text-secondary text-xs font-bold hover:bg-sage transition-colors"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border hover:bg-sage transition-colors text-sm"
+                aria-label="Switch language"
               >
-                {locale === 'es' ? 'EN' : 'ES'}
+                <span className="text-lg">{locale === 'es' ? '🇺🇸' : '🇲🇽'}</span>
+                {locale === 'es' ? 'English' : 'Español'}
               </button>
               <a
                 href="https://app.heykova.io/register"
