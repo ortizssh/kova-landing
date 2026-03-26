@@ -1,13 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import KovaLogo from "./KovaLogo";
 import { useI18n } from "@/lib/i18n";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const { t, locale, setLocale } = useI18n();
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   const links = [
     { label: t("nav.features"), href: "#features" },
@@ -34,16 +44,36 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <button
-            onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
-            className="text-lg hover:scale-110 transition-transform cursor-pointer"
-            aria-label="Switch language"
-          >
-            {locale === 'es' ? '🇺🇸' : '🇲🇽'}
-          </button>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          {/* Language dropdown */}
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm text-text-secondary hover:bg-sage transition-colors cursor-pointer"
+            >
+              <span className="text-base">{locale === 'es' ? '🇲🇽' : '🇺🇸'}</span>
+              <span className="font-medium">{locale === 'es' ? 'ES' : 'EN'}</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {langOpen && (
+              <div className="absolute top-full right-0 mt-1 bg-white rounded-xl border border-border shadow-lg py-1 min-w-[140px] z-50">
+                <button
+                  onClick={() => { setLocale('es'); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-sage transition-colors ${locale === 'es' ? 'text-primary font-semibold' : 'text-text-secondary'}`}
+                >
+                  <span className="text-base">🇲🇽</span> Español
+                </button>
+                <button
+                  onClick={() => { setLocale('en'); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-sage transition-colors ${locale === 'en' ? 'text-primary font-semibold' : 'text-text-secondary'}`}
+                >
+                  <span className="text-base">🇺🇸</span> English
+                </button>
+              </div>
+            )}
+          </div>
           <a
             href="https://app.heykova.io/login"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-sage transition-colors"
