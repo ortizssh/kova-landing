@@ -211,17 +211,34 @@ const I18nContext = createContext<I18nContextType>({
   t: (key) => translations[key]?.es ?? key,
 });
 
+function getCookie(name: string): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
+function setCookie(name: string, value: string) {
+  document.cookie = `${name}=${value};path=/;max-age=${60 * 60 * 24 * 365};samesite=lax`;
+}
+
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>("es");
 
   useEffect(() => {
-    const saved = localStorage.getItem("kova_locale") as Locale | null;
-    if (saved === "en" || saved === "es") setLocale(saved);
+    // Priority: localStorage (manual choice) > cookie (geo-detected) > default
+    const manual = localStorage.getItem("kova_locale") as Locale | null;
+    if (manual === "en" || manual === "es") {
+      setLocale(manual);
+      return;
+    }
+    const geo = getCookie("kova_locale") as Locale | null;
+    if (geo === "en" || geo === "es") setLocale(geo);
   }, []);
 
   const changeLocale = (l: Locale) => {
     setLocale(l);
     localStorage.setItem("kova_locale", l);
+    setCookie("kova_locale", l); // also set cookie so middleware knows user chose manually
   };
 
   const t = (key: TranslationKey) => translations[key]?.[locale] ?? key;
