@@ -22,23 +22,6 @@ interface Plan {
 
 const plans: Plan[] = [
   {
-    name: "Free",
-    price: "$0",
-    period: "/mes",
-    features: [
-      { text: "100 mensajes AI/mes", included: true },
-      { text: "Hasta 50 productos", included: true },
-      { text: "Búsqueda semántica", included: true },
-      { text: "Gestión de carrito", included: true },
-      { text: "Analytics", included: false },
-      { text: "Branding personalizado", included: false },
-      { text: "Agentes de voz", included: false },
-    ],
-    cta: "Comenzar gratis",
-    ctaHref: "https://app.heykova.io/register",
-    style: "outline",
-  },
-  {
     name: "Starter",
     price: "$149",
     period: "USD/mes",
@@ -51,7 +34,7 @@ const plans: Plan[] = [
       { text: "Branding personalizado", included: false },
       { text: "Agentes de voz", included: false },
     ],
-    cta: "Elegir Starter",
+    cta: "Comenzar ahora",
     ctaHref: "https://app.heykova.io/register",
     style: "filled",
   },
@@ -120,7 +103,7 @@ export default function Pricing() {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+        <div className="grid md:grid-cols-3 gap-6 items-start max-w-[960px] mx-auto">
           {plans.map((plan, i) => (
             <AnimatedSection key={plan.name} delay={i * 0.1}>
               <motion.div
@@ -183,7 +166,7 @@ export default function Pricing() {
 
         <AnimatedSection delay={0.5} className="text-center mt-10">
           <p className="text-sm text-text-muted">
-            Todos los planes incluyen trial de 14 días gratis. Sin tarjeta de
+            Todos los planes incluyen 7 días de prueba. Sin tarjeta de
             crédito. Precios en USD.
           </p>
         </AnimatedSection>

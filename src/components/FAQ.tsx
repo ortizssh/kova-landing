@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "¿Puedo probar antes de pagar?",
-    a: "Sí. Todos los planes incluyen un trial de 14 días gratis con acceso completo a todas las funciones. No se requiere tarjeta de crédito para comenzar.",
+    a: "Sí. Todos los planes incluyen 7 días de prueba con acceso completo a todas las funciones. No se requiere tarjeta de crédito para comenzar.",
   },
 ];
 

@@ -45,7 +45,7 @@ export default function Navbar() {
             href="https://app.heykova.io/register"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors shadow-primary"
           >
-            Comenzar gratis
+            Comenzar ahora
           </a>
         </div>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
                 href="https://app.heykova.io/register"
                 className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors"
               >
-                Comenzar gratis
+                Comenzar ahora
               </a>
             </div>
           </div>

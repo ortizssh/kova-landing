@@ -291,7 +291,7 @@ export default function Hero() {
                   href="https://app.heykova.io/register"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
                 >
-                  Instálalo gratis en tu tienda
+                  Prueba Kova 7 días
                 </a>
                 <a
                   href="#video"
@@ -301,7 +301,7 @@ export default function Hero() {
                 </a>
               </div>
               <p className="text-sm text-text-muted">
-                Setup en 5 minutos · 14 días gratis · Sin tarjeta
+                Setup en 5 minutos · 7 días de prueba · Sin tarjeta
               </p>
             </AnimatedSection>
           </div>
