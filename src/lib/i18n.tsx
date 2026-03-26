@@ -195,6 +195,21 @@ const translations = {
   "plan.allFeatures": { es: "Todas las funcionalidades", en: "All features" },
   "plan.apiAccess": { es: "Acceso a API", en: "API access" },
   "plan.unlimitedVoice": { es: "Llamadas de voz ilimitadas", en: "Unlimited voice calls" },
+
+  // Promo Popup
+  "popup.badge": { es: "Oferta por tiempo limitado", en: "Limited time offer" },
+  "popup.title": { es: "Prueba Kova 7 días y vende más desde hoy", en: "Try Kova for 7 days and sell more starting today" },
+  "popup.subtitle": { es: "Activa tu vendedor IA en 5 minutos. Si no ves resultados en 30 días, te devolvemos tu dinero.", en: "Activate your AI salesperson in 5 minutes. If you don't see results in 30 days, we refund your money." },
+  "popup.benefit1": { es: "Chat + llamadas con voz IA incluidas", en: "Chat + AI voice calls included" },
+  "popup.benefit2": { es: "10% de tasa de conversión promedio", en: "10% average conversion rate" },
+  "popup.benefit3": { es: "Garantía de devolución de 30 días", en: "30-day money-back guarantee" },
+  "popup.cta": { es: "Comenzar mi prueba de 7 días", en: "Start my 7-day trial" },
+  "popup.disclaimer": { es: "Sin compromiso. Cancela cuando quieras.", en: "No commitment. Cancel anytime." },
+
+  // Sticky Banner
+  "banner.highlight": { es: "7 días de prueba:", en: "7-day trial:" },
+  "banner.text": { es: "Activa tu vendedor IA y recupera ventas perdidas desde hoy", en: "Activate your AI salesperson and recover lost sales starting today" },
+  "banner.cta": { es: "Probar ahora", en: "Try now" },
 } as const;
 
 type TranslationKey = keyof typeof translations;

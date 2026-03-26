@@ -14,6 +14,8 @@ import EarlyAccess from "@/components/EarlyAccess";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import PromoPopup from "@/components/PromoPopup";
+import StickyBanner from "@/components/StickyBanner";
 
 export default function Home() {
   return (
@@ -36,6 +38,8 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <PromoPopup />
+      <StickyBanner />
     </>
   );
 }
