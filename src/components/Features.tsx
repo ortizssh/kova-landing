@@ -14,39 +14,39 @@ import AnimatedSection from "./AnimatedSection";
 const features = [
   {
     icon: Search,
-    title: "Búsqueda Semántica con IA",
+    title: "Tus clientes encuentran lo que buscan",
     description:
-      "Entiende la intención del cliente, no solo keywords. Powered by embeddings vectoriales para encontrar el producto perfecto.",
+      'Tu cliente escribe "algo para piel sensible" y Kova entiende. No keywords, no filtros complicados. Resultado: tus productos se encuentran, no se pierden entre categorías.',
   },
   {
     icon: ShoppingCart,
-    title: "Gestión de Carrito Integrada",
+    title: "El carrito se llena desde el chat",
     description:
-      "Agrega, modifica y elimina productos del carrito directamente desde el chat. Sincronizado con tu plataforma en tiempo real.",
+      "El cliente pregunta, Kova recomienda y agrega al carrito en un solo paso. Sin fricción, sin salir de la conversación. Menos clics = más compras completadas.",
   },
   {
     icon: Palette,
-    title: "Personalización Total",
+    title: "Se ve como tu marca, no como un bot",
     description:
-      "Colores, tipografía, avatar, mensajes de bienvenida, tono del asistente, idioma — todo configurable sin código.",
+      "Colores, avatar, tono de voz, idioma — todo se adapta a tu tienda. Tus clientes sienten que hablan con tu marca, no con un chatbot genérico.",
   },
   {
     icon: BarChart3,
-    title: "Analytics de Conversión",
+    title: "Sabes exactamente cuánto genera",
     description:
-      "Mide el impacto real: recomendaciones, conversiones, revenue atribuido al AI, tasa de conversión. Dashboard completo.",
+      "Revenue atribuido al AI, tasa de conversión, productos top. No adivinas — ves el impacto real en tu dashboard con números concretos.",
   },
   {
     icon: Mic,
-    title: "Voz, Imágenes y Llamadas",
+    title: "Llamadas reales cuando el chat no basta",
     description:
-      "Los clientes pueden enviar audios, fotos, o escalar a una llamada telefónica con IA. El agente mantiene el contexto completo de la conversación.",
+      "Si el cliente prefiere hablar, Kova lo llama por teléfono con voz IA — con todo el contexto de la conversación. Sin repetir, sin fricción.",
   },
   {
     icon: BookOpen,
-    title: "Knowledge Base / RAG",
+    title: "Respuestas precisas sobre TU marca",
     description:
-      "Sube documentos con información de tu marca. El asistente los usa como contexto para respuestas precisas y alineadas.",
+      "Sube documentos, políticas, guías de talla. Kova los usa para dar respuestas exactas y alineadas con tu negocio. Cero respuestas inventadas.",
   },
 ];
 
@@ -56,11 +56,10 @@ export default function Features() {
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Todo lo que necesitas para vender más
+            Todo incluido para que vendas más
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Funcionalidades diseñadas para maximizar conversiones en tu tienda
-            online
+            Cada funcionalidad está diseñada para un solo objetivo: convertir visitantes en compradores
           </p>
         </AnimatedSection>
 

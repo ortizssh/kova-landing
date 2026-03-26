@@ -247,24 +247,23 @@ export default function Hero() {
           {/* Left */}
           <div>
             <AnimatedSection>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Para tiendas Shopify y WooCommerce
+              <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-600 text-sm font-medium mb-6">
+                El 70% de tus visitantes se van sin comprar
               </span>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
               <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
-                Un vendedor que atiende, recomienda y{" "}
-                <span className="text-primary">cierra ventas por ti</span>
-                {" "}— 24/7
+                Recupera las ventas que tu tienda{" "}
+                <span className="text-primary">pierde cada día</span>
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
-                Tus clientes preguntan, abandonan el carrito y se van sin comprar.
-                Kova los atiende por chat y los llama por teléfono con voz IA —
-                con todo el contexto de tu catálogo. Sin contratar gente. Sin perder ventas.
+                Tus clientes tienen dudas, no encuentran lo que buscan y abandonan el carrito.
+                Kova los atiende por chat y los llama por teléfono con voz IA — con todo el contexto
+                de tu catálogo. <strong className="text-text-primary">Sin contratar vendedores. Sin perder más ventas.</strong>
               </p>
             </AnimatedSection>
 
@@ -291,7 +290,7 @@ export default function Hero() {
                   href="https://app.heykova.io/register"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-primary text-base"
                 >
-                  Prueba Kova 7 días
+                  Quiero vender más con IA
                 </a>
                 <a
                   href="#video"
@@ -301,7 +300,7 @@ export default function Hero() {
                 </a>
               </div>
               <p className="text-sm text-text-muted">
-                Setup en 5 minutos · 7 días de prueba
+                Setup en 5 minutos · 7 días de prueba · Resultados desde el día 1
               </p>
             </AnimatedSection>
           </div>

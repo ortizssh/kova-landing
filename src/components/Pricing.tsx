@@ -95,11 +95,14 @@ export default function Pricing() {
     <section id="pricing" className="py-16 md:py-24 bg-bg-warm">
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimatedSection className="text-center mb-14">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 text-sm font-medium mb-4">
+            Precio de lanzamiento — cupos limitados
+          </span>
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
-            Precios simples, sin sorpresas
+            Invierte menos de lo que cuesta un café al día
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Elige el plan que mejor se adapte a tu tienda
+            Una sola venta recuperada paga tu plan del mes entero
           </p>
         </AnimatedSection>
 

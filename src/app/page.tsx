@@ -7,7 +7,9 @@ import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
 import VoiceCalling from "@/components/VoiceCalling";
 import Integrations from "@/components/Integrations";
+import ValueStack from "@/components/ValueStack";
 import Pricing from "@/components/Pricing";
+import Guarantee from "@/components/Guarantee";
 import EarlyAccess from "@/components/EarlyAccess";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -26,8 +28,10 @@ export default function Home() {
         <WidgetShowcase />
         <VoiceCalling />
         <Integrations />
-        <Pricing />
         <EarlyAccess />
+        <ValueStack />
+        <Pricing />
+        <Guarantee />
         <FAQ />
         <FinalCTA />
       </main>
