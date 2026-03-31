@@ -59,7 +59,7 @@ export default function Pricing() {
     },
     {
       name: "Professional",
-      price: "$349",
+      price: "$299",
       period: "USD/mes",
       highlighted: true,
       features: [
