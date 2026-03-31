@@ -7,11 +7,14 @@ import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
 import VoiceCalling from "@/components/VoiceCalling";
 import Comparison from "@/components/Comparison";
+import UseCases from "@/components/UseCases";
+import Integration from "@/components/Integration";
 import Integrations from "@/components/Integrations";
 import ValueStack from "@/components/ValueStack";
 import Pricing from "@/components/Pricing";
 import Guarantee from "@/components/Guarantee";
 import EarlyAccess from "@/components/EarlyAccess";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -31,8 +34,11 @@ export default function Home() {
         <WidgetShowcase />
         <VoiceCalling />
         <Comparison />
+        <UseCases />
+        <Integration />
         <Integrations />
         <EarlyAccess />
+        <Testimonials />
         <ValueStack />
         <Pricing />
         <Guarantee />

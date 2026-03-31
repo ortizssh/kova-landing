@@ -165,7 +165,82 @@ const faqSchema = {
         text: "Sí. Todos los planes incluyen 7 días de prueba con acceso completo a todas las funciones.",
       },
     },
+    {
+      "@type": "Question",
+      name: "¿Qué pasa si el AI da una recomendación equivocada?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Kova se basa en tu catálogo real y datos de productos para recomendar. Si algo no es correcto, puedes ajustar las instrucciones del agente desde el panel de admin. También puedes activar el modo supervisado donde un humano revisa las respuestas antes de enviarlas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué pasa cuando llego al límite de mensajes de mi plan?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Te notificamos cuando estás cerca del límite. Puedes subir de plan en cualquier momento sin perder configuración. Los mensajes que excedan el límite quedan en cola hasta que actualices o inicie el nuevo período.",
+      },
+    },
   ],
+};
+
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Kova",
+  description:
+    "AI-powered sales assistant for Shopify and WooCommerce stores. Features smart chat, AI voice calls, semantic product search, and cart management.",
+  url: "https://heykova.io",
+  review: [
+    {
+      "@type": "Review",
+      reviewBody:
+        "Kova nos ayudó a recuperar ventas que ni sabíamos que estábamos perdiendo. En el primer mes aumentamos las conversiones un 15%.",
+      author: {
+        "@type": "Person",
+        name: "María G.",
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+    },
+    {
+      "@type": "Review",
+      reviewBody:
+        "Lo mejor es que funciona 24/7. Nuestros clientes reciben atención inmediata incluso a las 3am.",
+      author: {
+        "@type": "Person",
+        name: "Carlos R.",
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+    },
+    {
+      "@type": "Review",
+      reviewBody:
+        "La instalación fue increíblemente fácil. En 5 minutos ya teníamos el chat funcionando.",
+      author: {
+        "@type": "Person",
+        name: "Ana P.",
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "3",
+    bestRating: "5",
+  },
 };
 
 export default function RootLayout({
@@ -188,6 +263,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
         />
       </head>
       <body className="font-sans antialiased"><Providers>{children}</Providers></body>

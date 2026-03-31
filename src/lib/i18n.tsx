@@ -241,6 +241,54 @@ const translations = {
   "banner.highlight": { es: "7 días de prueba:", en: "7-day trial:" },
   "banner.text": { es: "Activa tu vendedor IA y recupera ventas perdidas desde hoy", en: "Activate your AI salesperson and recover lost sales starting today" },
   "banner.cta": { es: "Probar ahora", en: "Try now" },
+
+  // Use Cases
+  "usecases.title": { es: "Kova funciona en cualquier industria", en: "Kova works in any industry" },
+  "usecases.subtitle": { es: "Resultados reales en las industrias más competitivas del e-commerce", en: "Real results in the most competitive e-commerce industries" },
+  "usecases.a.industry": { es: "Belleza y skincare", en: "Beauty & skincare" },
+  "usecases.a.problem": { es: "Tienda de skincare con 5,000 visitantes/mes. Antes: 2% conversión.", en: "Skincare store with 5,000 visitors/month. Before: 2% conversion." },
+  "usecases.a.result": { es: "Con Kova: 10% conversión en chat.", en: "With Kova: 10% chat conversion." },
+  "usecases.a.metric": { es: "+$15,000 USD/mes en ventas recuperadas", en: "+$15,000 USD/month in recovered sales" },
+  "usecases.b.industry": { es: "Moda y ropa", en: "Fashion & clothing" },
+  "usecases.b.problem": { es: "E-commerce de ropa con catálogo de 2,000 productos. Kova recomienda tallas, colores y combos.", en: "Clothing e-commerce with 2,000-product catalog. Kova recommends sizes, colors, and outfits." },
+  "usecases.b.result": { es: "AOV aumentó un 25% con sugerencias inteligentes.", en: "AOV increased 25% with smart suggestions." },
+  "usecases.b.metric": { es: "+25% ticket promedio", en: "+25% average order value" },
+  "usecases.c.industry": { es: "Alimentos y bebidas", en: "Food & beverages" },
+  "usecases.c.problem": { es: "Tienda de productos orgánicos. 200 carritos abandonados/mes.", en: "Organic products store. 200 abandoned carts/month." },
+  "usecases.c.result": { es: "Kova recupera el 30% con follow-up automático.", en: "Kova recovers 30% with automatic follow-up." },
+  "usecases.c.metric": { es: "$8,000 USD/mes recuperados", en: "$8,000 USD/month recovered" },
+  "usecases.before": { es: "Antes", en: "Before" },
+  "usecases.after": { es: "Con Kova", en: "With Kova" },
+
+  // Integration Steps
+  "integration.title": { es: "Instalación en 5 minutos", en: "5-minute setup" },
+  "integration.subtitle": { es: "Sin código, sin configuración técnica, sin fricción", en: "No code, no technical configuration, no friction" },
+  "integration.step1.title": { es: "Conecta tu tienda", en: "Connect your store" },
+  "integration.step1.desc": { es: "Instala la extensión de Shopify o el plugin de WooCommerce con un click.", en: "Install the Shopify extension or the WooCommerce plugin with one click." },
+  "integration.step2.title": { es: "Personaliza tu agente", en: "Customize your agent" },
+  "integration.step2.desc": { es: "Configura el tono, colores, mensajes de bienvenida y catálogo de productos.", en: "Configure the tone, colors, welcome messages, and product catalog." },
+  "integration.step3.title": { es: "Empieza a vender", en: "Start selling" },
+  "integration.step3.desc": { es: "Kova comienza a atender clientes inmediatamente. Sin código, sin configuración técnica.", en: "Kova starts serving customers immediately. No code, no technical setup." },
+  "integration.badge": { es: "Compatible con Shopify y WooCommerce · Prueba 7 días gratis", en: "Compatible with Shopify and WooCommerce · 7-day free trial" },
+
+  // Testimonials
+  "testimonials.title": { es: "Lo que dicen nuestras tiendas", en: "What our stores say" },
+  "testimonials.subtitle": { es: "Tiendas reales, resultados reales", en: "Real stores, real results" },
+  "testimonials.a.quote": { es: "Kova nos ayudó a recuperar ventas que ni sabíamos que estábamos perdiendo. En el primer mes aumentamos las conversiones un 15%.", en: "Kova helped us recover sales we didn't even know we were losing. In the first month we increased conversions by 15%." },
+  "testimonials.a.name": { es: "María G.", en: "María G." },
+  "testimonials.a.role": { es: "Tienda de cosmética, Chile", en: "Cosmetics store, Chile" },
+  "testimonials.b.quote": { es: "Lo mejor es que funciona 24/7. Nuestros clientes reciben atención inmediata incluso a las 3am.", en: "The best part is it works 24/7. Our customers get immediate attention even at 3am." },
+  "testimonials.b.name": { es: "Carlos R.", en: "Carlos R." },
+  "testimonials.b.role": { es: "E-commerce de ropa, Colombia", en: "Clothing e-commerce, Colombia" },
+  "testimonials.c.quote": { es: "La instalación fue increíblemente fácil. En 5 minutos ya teníamos el chat funcionando.", en: "Installation was incredibly easy. In 5 minutes we already had the chat running." },
+  "testimonials.c.name": { es: "Ana P.", en: "Ana P." },
+  "testimonials.c.role": { es: "Tienda de alimentos, México", en: "Food store, Mexico" },
+
+  // FAQ Q9 + Q10
+  "faq.q9": { es: "¿Qué pasa si el AI da una recomendación equivocada?", en: "What if the AI gives a wrong recommendation?" },
+  "faq.a9": { es: "Kova se basa en tu catálogo real y datos de productos para recomendar. Si algo no es correcto, puedes ajustar las instrucciones del agente desde el panel de admin. También puedes activar el modo supervisado donde un humano revisa las respuestas antes de enviarlas.", en: "Kova bases its recommendations on your real catalog and product data. If something is incorrect, you can adjust the agent's instructions from the admin panel. You can also activate supervised mode where a human reviews responses before they are sent." },
+  "faq.q10": { es: "¿Qué pasa cuando llego al límite de mensajes de mi plan?", en: "What happens when I reach my plan's message limit?" },
+  "faq.a10": { es: "Te notificamos cuando estás cerca del límite. Puedes subir de plan en cualquier momento sin perder configuración. Los mensajes que excedan el límite quedan en cola hasta que actualices o inicie el nuevo período.", en: "We notify you when you're approaching the limit. You can upgrade your plan at any time without losing your configuration. Messages that exceed the limit are queued until you upgrade or the new period begins." },
 } as const;
 
 type TranslationKey = keyof typeof translations;
