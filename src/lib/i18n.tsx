@@ -13,6 +13,12 @@ const translations = {
   "nav.login": { es: "Iniciar sesión", en: "Sign in" },
   "nav.cta": { es: "Comenzar ahora", en: "Get started" },
 
+  // Hero AEO definition
+  "hero.definition": {
+    es: "Kova es un vendedor con inteligencia artificial para tiendas Shopify y WooCommerce. Atiende clientes por chat y voz IA, recomienda productos, y gestiona el carrito — todo en tiempo real, 24/7.",
+    en: "Kova is an AI-powered salesperson for Shopify and WooCommerce stores. It serves customers via chat and AI voice, recommends products, and manages the cart — all in real time, 24/7.",
+  },
+
   // Hero
   "hero.badge": { es: "El 70% de tus visitantes se van sin comprar", en: "70% of your visitors leave without buying" },
   "hero.title": { es: "Recupera las ventas que tu tienda", en: "Recover the sales your store" },
@@ -179,6 +185,31 @@ const translations = {
   "footer.terms": { es: "Términos de servicio", en: "Terms of service" },
   "footer.privacy": { es: "Política de privacidad", en: "Privacy policy" },
   "footer.copyright": { es: "Todos los derechos reservados.", en: "All rights reserved." },
+  "footer.ext.shopify": { es: "Shopify App Store", en: "Shopify App Store" },
+  "footer.ext.woo": { es: "Directorio de plugins WooCommerce", en: "WooCommerce Plugin Directory" },
+  "footer.ext.aiEcommerce": { es: "IA para e-commerce: guía completa", en: "AI for e-commerce: complete guide" },
+  "footer.ext.shopifyBlog": { es: "Blog de Shopify", en: "Shopify Blog" },
+  "footer.ext.wooGuide": { es: "Guía oficial de WooCommerce", en: "Official WooCommerce Guide" },
+
+  // Comparison
+  "comparison.title": { es: "¿Por qué elegir Kova?", en: "Why choose Kova?" },
+  "comparison.subtitle": {
+    es: "Comparado con las alternativas más populares del mercado",
+    en: "Compared to the most popular alternatives on the market",
+  },
+  "comparison.feature": { es: "Funcionalidad", en: "Feature" },
+  "comparison.f1": { es: "Chat IA", en: "AI Chat" },
+  "comparison.f2": { es: "Llamadas con voz IA", en: "AI voice calls" },
+  "comparison.f3": { es: "Carrito integrado", en: "Integrated cart" },
+  "comparison.f4": { es: "Búsqueda semántica", en: "Semantic search" },
+  "comparison.f5": { es: "Precio desde", en: "Price from" },
+  "comparison.f6": { es: "Shopify + WooCommerce", en: "Shopify + WooCommerce" },
+  "comparison.f7": { es: "Español nativo", en: "Native Spanish" },
+  "comparison.limited": { es: "Limitado", en: "Limited" },
+  "comparison.keywordOnly": { es: "Solo keywords", en: "Keywords only" },
+  "comparison.onlyShopify": { es: "Solo Shopify", en: "Shopify only" },
+  "comparison.onlyIntercom": { es: "Parcial", en: "Partial" },
+  "comparison.cta": { es: "Empezar con Kova", en: "Get started with Kova" },
 
   // Pricing features (reused)
   "plan.messages": { es: "mensajes AI/mes", en: "AI messages/mo" },

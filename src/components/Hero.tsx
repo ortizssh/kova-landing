@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
@@ -256,6 +257,12 @@ export default function Hero() {
               </span>
             </AnimatedSection>
 
+            <AnimatedSection delay={0.05}>
+              <p className="text-sm text-text-secondary leading-relaxed mb-4 max-w-[600px]">
+                {t("hero.definition")}
+              </p>
+            </AnimatedSection>
+
             <AnimatedSection delay={0.1}>
               <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
                 {t("hero.title")}{" "}
@@ -325,13 +332,11 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap">
             {/* Shopify logo */}
             <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/shopify-logo.svg" alt="Shopify" className="h-8" />
+              <img src="/shopify-logo.svg" alt="Shopify" width={80} height={32} className="h-8 w-auto" />
             </div>
             {/* WooCommerce logo */}
             <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/woocommerce-logo.png" alt="WooCommerce" className="h-8" />
+              <Image src="/woocommerce-logo.png" alt="WooCommerce" width={120} height={32} loading="lazy" className="h-8 w-auto" />
             </div>
           </div>
         </AnimatedSection>

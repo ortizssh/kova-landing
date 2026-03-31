@@ -10,23 +10,38 @@ export default function Footer() {
     {
       title: t("footer.product"),
       links: [
-        { label: t("nav.features"), href: "#features" },
-        { label: t("nav.pricing"), href: "#pricing" },
-        { label: "Demo", href: "#video" },
+        { label: t("nav.features"), href: "#features", external: false },
+        { label: t("nav.pricing"), href: "#pricing", external: false },
+        { label: "Demo", href: "#video", external: false },
       ],
     },
     {
       title: t("footer.resources"),
       links: [
-        { label: t("footer.docs"), href: "#" },
-        { label: t("nav.faq"), href: "#faq" },
+        { label: t("footer.docs"), href: "#", external: false },
+        { label: t("nav.faq"), href: "#faq", external: false },
+        {
+          label: t("footer.ext.shopify"),
+          href: "https://apps.shopify.com",
+          external: true,
+        },
+        {
+          label: t("footer.ext.woo"),
+          href: "https://wordpress.org/plugins/woocommerce/",
+          external: true,
+        },
+        {
+          label: t("footer.ext.aiEcommerce"),
+          href: "https://www.shopify.com/blog/ai-ecommerce",
+          external: true,
+        },
       ],
     },
     {
       title: t("footer.legal"),
       links: [
-        { label: t("footer.terms"), href: "#" },
-        { label: t("footer.privacy"), href: "#" },
+        { label: t("footer.terms"), href: "#", external: false },
+        { label: t("footer.privacy"), href: "#", external: false },
       ],
     },
   ];
@@ -55,6 +70,9 @@ export default function Footer() {
                     <a
                       href={link.href}
                       className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                     >
                       {link.label}
                     </a>

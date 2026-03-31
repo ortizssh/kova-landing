@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     "Asistente de ventas con IA para tu tienda online. Chat inteligente, llamadas con voz IA y carrito integrado. Hasta 30% de conversión. Prueba 7 días gratis.",
   alternates: {
     canonical: "https://heykova.io",
+    languages: {
+      "es": "https://heykova.io",
+      "en": "https://heykova.io",
+      "x-default": "https://heykova.io",
+    },
   },
   openGraph: {
     title: "Kova — Vendedor IA para Shopify y WooCommerce",

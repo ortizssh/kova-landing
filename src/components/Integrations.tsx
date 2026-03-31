@@ -1,19 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
 function ShopifyLogo() {
   return (
-    /* eslint-disable-next-line @next/next/no-img-element */
-    <img src="/shopify-logo.svg" alt="Shopify" className="h-10 mx-auto mb-4" />
+    <img src="/shopify-logo.svg" alt="Shopify" width={100} height={40} className="h-10 w-auto mx-auto mb-4" />
   );
 }
 
 function WooCommerceLogo() {
   return (
-    /* eslint-disable-next-line @next/next/no-img-element */
-    <img src="/woocommerce-logo.png" alt="WooCommerce" className="h-10 mx-auto mb-4" />
+    <Image src="/woocommerce-logo.png" alt="WooCommerce" width={150} height={40} loading="lazy" className="h-10 w-auto mx-auto mb-4" />
   );
 }
 

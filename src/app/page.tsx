@@ -6,6 +6,7 @@ import VideoDemo from "@/components/VideoDemo";
 import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
 import VoiceCalling from "@/components/VoiceCalling";
+import Comparison from "@/components/Comparison";
 import Integrations from "@/components/Integrations";
 import ValueStack from "@/components/ValueStack";
 import Pricing from "@/components/Pricing";
@@ -29,6 +30,7 @@ export default function Home() {
         <Features />
         <WidgetShowcase />
         <VoiceCalling />
+        <Comparison />
         <Integrations />
         <EarlyAccess />
         <ValueStack />
