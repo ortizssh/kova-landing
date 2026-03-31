@@ -28,10 +28,10 @@ export default function FinalCTA() {
           <p className="mt-6 text-sm text-text-muted">
             {t("final.questions")}{" "}
             <a
-              href="mailto:hola@heykova.io"
+              href="mailto:hello@heykova.io"
               className="text-primary hover:underline"
             >
-              hola@heykova.io
+              hello@heykova.io
             </a>
           </p>
         </AnimatedSection>
