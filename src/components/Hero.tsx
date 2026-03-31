@@ -257,11 +257,8 @@ export default function Hero() {
               </span>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.05}>
-              <p className="text-sm text-text-secondary leading-relaxed mb-4 max-w-[600px]">
-                {t("hero.definition")}
-              </p>
-            </AnimatedSection>
+            {/* AEO definition — visually hidden, crawlable by search engines and AI */}
+            <p className="sr-only">{t("hero.definition")}</p>
 
             <AnimatedSection delay={0.1}>
               <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
