@@ -7,7 +7,6 @@ import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
 import VoiceCalling from "@/components/VoiceCalling";
 import Comparison from "@/components/Comparison";
-import UseCases from "@/components/UseCases";
 import Integration from "@/components/Integration";
 import Integrations from "@/components/Integrations";
 import ValueStack from "@/components/ValueStack";
@@ -34,7 +33,6 @@ export default function Home() {
         <WidgetShowcase />
         <VoiceCalling />
         <Comparison />
-        <UseCases />
         <Integration />
         <Integrations />
         <EarlyAccess />
