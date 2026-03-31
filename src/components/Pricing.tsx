@@ -8,6 +8,7 @@ import { useI18n } from "@/lib/i18n";
 interface PlanFeature {
   text: string;
   included: boolean;
+  highlight?: boolean;
 }
 
 interface Plan {
@@ -70,7 +71,7 @@ export default function Pricing() {
         { text: t("plan.conversionAnalytics"), included: true },
         { text: t("plan.customBranding"), included: true },
         { text: t("plan.prioritySupport"), included: true },
-        { text: `100 ${t("plan.voiceCalls")}`, included: true },
+        { text: `100 ${t("plan.voiceCalls")}`, included: true, highlight: true },
       ],
       cta: t("pricing.pro.cta"),
       ctaHref: "https://app.heykova.io/register",
@@ -85,7 +86,7 @@ export default function Pricing() {
         { text: t("plan.unlimitedProducts"), included: true },
         { text: t("plan.allFeatures"), included: true },
         { text: t("plan.apiAccess"), included: true },
-        { text: t("plan.unlimitedVoice"), included: true },
+        { text: t("plan.unlimitedVoice"), included: true, highlight: true },
         { text: t("plan.prioritySupport"), included: true },
       ],
       cta: t("pricing.enterprise.cta"),
@@ -143,20 +144,23 @@ export default function Pricing() {
 
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((f) => (
-                    <li key={f.text} className="flex items-start gap-2">
+                    <li key={f.text} className={`flex items-start gap-2 ${f.highlight ? "bg-primary/5 -mx-2 px-2 py-1.5 rounded-lg border border-primary/15" : ""}`}>
                       {f.included ? (
-                        <Check className="w-4 h-4 text-success mt-0.5 shrink-0" />
+                        <Check className={`w-4 h-4 mt-0.5 shrink-0 ${f.highlight ? "text-primary" : "text-success"}`} />
                       ) : (
                         <X className="w-4 h-4 text-text-muted mt-0.5 shrink-0" />
                       )}
                       <span
                         className={`text-sm ${
-                          f.included
+                          f.highlight
+                            ? "text-primary font-semibold"
+                            : f.included
                             ? "text-text-primary"
                             : "text-text-muted"
                         }`}
                       >
                         {f.text}
+                        {f.highlight && <span className="ml-1.5 text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full uppercase">New</span>}
                       </span>
                     </li>
                   ))}
