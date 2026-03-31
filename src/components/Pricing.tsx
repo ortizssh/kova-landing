@@ -64,6 +64,7 @@ export default function Pricing() {
       period: "USD/mes",
       highlighted: true,
       features: [
+        { text: `100 ${t("plan.voiceCalls")}`, included: true, highlight: true },
         { text: `10,000 ${t("plan.messages")}`, included: true },
         { text: `5,000 ${t("plan.products")}`, included: true },
         { text: t("plan.semanticSearch"), included: true },
@@ -71,7 +72,6 @@ export default function Pricing() {
         { text: t("plan.conversionAnalytics"), included: true },
         { text: t("plan.customBranding"), included: true },
         { text: t("plan.prioritySupport"), included: true },
-        { text: `100 ${t("plan.voiceCalls")}`, included: true, highlight: true },
       ],
       cta: t("pricing.pro.cta"),
       ctaHref: "https://app.heykova.io/register",
@@ -82,11 +82,11 @@ export default function Pricing() {
       price: "$599",
       period: "USD/mes",
       features: [
+        { text: t("plan.unlimitedVoice"), included: true, highlight: true },
         { text: t("plan.unlimitedMessages"), included: true },
         { text: t("plan.unlimitedProducts"), included: true },
         { text: t("plan.allFeatures"), included: true },
         { text: t("plan.apiAccess"), included: true },
-        { text: t("plan.unlimitedVoice"), included: true, highlight: true },
         { text: t("plan.prioritySupport"), included: true },
       ],
       cta: t("pricing.enterprise.cta"),
