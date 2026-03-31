@@ -122,7 +122,7 @@ const translations = {
   "valueStack.item5.note": { es: "vs desarrollo a medida", en: "vs custom development" },
   "valueStack.totalValue": { es: "de valor total", en: "total value" },
   "valueStack.yourInvestment": { es: "Tu inversión:", en: "Your investment:" },
-  "valueStack.from": { es: "desde $149", en: "from $149" },
+  "valueStack.from": { es: "desde $99", en: "from $99" },
   "valueStack.savings": { es: "de lo que costaría hacerlo por tu cuenta", en: "of what it would cost to do it yourself" },
   "valueStack.cta": { es: "Quiero vender más con IA", en: "I want to sell more with AI" },
 

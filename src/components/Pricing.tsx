@@ -42,7 +42,7 @@ export default function Pricing() {
   const plans: Plan[] = [
     {
       name: "Starter",
-      price: "$149",
+      price: "$99",
       period: "USD/mes",
       features: [
         { text: `1,000 ${t("plan.messages")}`, included: true },

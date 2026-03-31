@@ -67,7 +67,7 @@ export default function Comparison() {
     },
     {
       label: t("comparison.f5"),
-      kova: <span className="text-sm font-semibold text-primary">$149</span>,
+      kova: <span className="text-sm font-semibold text-primary">$99</span>,
       tidio: <span className="text-sm text-text-secondary">$29</span>,
       gorgias: <span className="text-sm text-text-secondary">$300</span>,
       intercom: <span className="text-sm text-text-secondary">$74</span>,
