@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
@@ -13,9 +14,9 @@ interface PlanFeature {
 
 interface Plan {
   name: string;
-  price: string;
+  monthlyPrice: number;
+  annualMonthlyPrice: number;
   oldPrice?: string;
-  period: string;
   features: PlanFeature[];
   cta: string;
   ctaHref: string;
@@ -40,13 +41,15 @@ function ctaClasses(style: Plan["style"]) {
 
 export default function Pricing() {
   const { t } = useI18n();
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const isAnnual = billingPeriod === "annual";
 
   const plans: Plan[] = [
     {
       name: "Starter",
-      price: "$99",
+      monthlyPrice: 99,
+      annualMonthlyPrice: 79,
       oldPrice: "$149",
-      period: "USD/mes",
       features: [
         { text: `1,000 ${t("plan.messages")}`, included: true },
         { text: `500 ${t("plan.products")}`, included: true },
@@ -62,9 +65,9 @@ export default function Pricing() {
     },
     {
       name: "Professional",
-      price: "$299",
+      monthlyPrice: 299,
+      annualMonthlyPrice: 239,
       oldPrice: "$349",
-      period: "USD/mes",
       highlighted: true,
       features: [
         { text: `100 ${t("plan.voiceCalls")}`, included: true, highlight: true },
@@ -82,8 +85,8 @@ export default function Pricing() {
     },
     {
       name: "Enterprise",
-      price: "$599",
-      period: "USD/mes",
+      monthlyPrice: 599,
+      annualMonthlyPrice: 479,
       features: [
         { text: t("plan.unlimitedVoice"), included: true, highlight: true },
         { text: t("plan.unlimitedMessages"), included: true },
@@ -108,78 +111,125 @@ export default function Pricing() {
           <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary mb-4">
             {t("pricing.title")}
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto mb-8">
             {t("pricing.subtitle")}
           </p>
+
+          {/* Billing period toggle */}
+          <div className="inline-flex items-center bg-white/80 dark:bg-white/10 rounded-full p-1 border border-border shadow-sm">
+            <button
+              onClick={() => setBillingPeriod("monthly")}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                billingPeriod === "monthly"
+                  ? "bg-primary text-white shadow-sm"
+                  : "text-text-secondary hover:text-text-primary"
+              }`}
+            >
+              {t("pricing.monthly") || "Mensual"}
+            </button>
+            <button
+              onClick={() => setBillingPeriod("annual")}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
+                billingPeriod === "annual"
+                  ? "bg-primary text-white shadow-sm"
+                  : "text-text-secondary hover:text-text-primary"
+              }`}
+            >
+              {t("pricing.annual") || "Anual"}
+              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                billingPeriod === "annual"
+                  ? "bg-white/20 text-white"
+                  : "bg-green-500/10 text-green-600"
+              }`}>
+                -20%
+              </span>
+            </button>
+          </div>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6 items-start max-w-[960px] mx-auto">
-          {plans.map((plan, i) => (
-            <AnimatedSection key={plan.name} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                className={`bg-bg-card rounded-3xl p-6 border shadow-sm relative ${
-                  plan.highlighted
-                    ? "border-primary shadow-primary scale-[1.03] lg:scale-105"
-                    : "border-border"
-                }`}
-              >
-                {plan.highlighted && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
-                    POPULAR
-                  </span>
-                )}
+          {plans.map((plan, i) => {
+            const price = isAnnual ? plan.annualMonthlyPrice : plan.monthlyPrice;
+            const period = isAnnual ? "USD/mes" : "USD/mes";
+            const savings = (plan.monthlyPrice - plan.annualMonthlyPrice) * 12;
 
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-text-primary mb-1">
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1.5">
-                    {plan.oldPrice && (
-                      <span className="text-lg text-text-muted line-through">
-                        {plan.oldPrice}
-                      </span>
-                    )}
-                    <span className="text-3xl font-bold text-text-primary">
-                      {plan.price}
+            return (
+              <AnimatedSection key={plan.name} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className={`bg-bg-card rounded-3xl p-6 border shadow-sm relative ${
+                    plan.highlighted
+                      ? "border-primary shadow-primary scale-[1.03] lg:scale-105"
+                      : "border-border"
+                  }`}
+                >
+                  {plan.highlighted && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
+                      POPULAR
                     </span>
-                    <span className="text-text-muted text-sm">
-                      {plan.period}
-                    </span>
-                  </div>
-                </div>
+                  )}
 
-                <ul className="space-y-3 mb-6">
-                  {plan.features.map((f) => (
-                    <li key={f.text} className={`flex items-start gap-2 ${f.highlight ? "bg-primary/5 -mx-2 px-2 py-1.5 rounded-lg border border-primary/15" : ""}`}>
-                      {f.included ? (
-                        <Check className={`w-4 h-4 mt-0.5 shrink-0 ${f.highlight ? "text-primary" : "text-success"}`} />
-                      ) : (
-                        <X className="w-4 h-4 text-text-muted mt-0.5 shrink-0" />
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-text-primary mb-1">
+                      {plan.name}
+                    </h3>
+                    <div className="flex items-baseline gap-1.5">
+                      {isAnnual && (
+                        <span className="text-lg text-text-muted line-through">
+                          ${plan.monthlyPrice}
+                        </span>
                       )}
-                      <span
-                        className={`text-sm ${
-                          f.highlight
-                            ? "text-primary font-semibold"
-                            : f.included
-                            ? "text-text-primary"
-                            : "text-text-muted"
-                        }`}
-                      >
-                        {f.text}
-                        {f.highlight && <span className="ml-1.5 text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full uppercase">New</span>}
+                      {!isAnnual && plan.oldPrice && (
+                        <span className="text-lg text-text-muted line-through">
+                          {plan.oldPrice}
+                        </span>
+                      )}
+                      <span className="text-3xl font-bold text-text-primary">
+                        ${price}
                       </span>
-                    </li>
-                  ))}
-                </ul>
+                      <span className="text-text-muted text-sm">
+                        {period}
+                      </span>
+                    </div>
+                    {isAnnual && (
+                      <p className="text-xs text-green-600 font-semibold mt-1">
+                        {t("pricing.saveAnnual") || "Facturado anualmente"} — {t("pricing.save") || "Ahorras"} ${savings}/{t("pricing.year") || "año"}
+                      </p>
+                    )}
+                  </div>
 
-                <a href={plan.ctaHref} className={ctaClasses(plan.style)}>
-                  {plan.cta}
-                </a>
-              </motion.div>
-            </AnimatedSection>
-          ))}
+                  <ul className="space-y-3 mb-6">
+                    {plan.features.map((f) => (
+                      <li key={f.text} className={`flex items-start gap-2 ${f.highlight ? "bg-primary/5 -mx-2 px-2 py-1.5 rounded-lg border border-primary/15" : ""}`}>
+                        {f.included ? (
+                          <Check className={`w-4 h-4 mt-0.5 shrink-0 ${f.highlight ? "text-primary" : "text-success"}`} />
+                        ) : (
+                          <X className="w-4 h-4 text-text-muted mt-0.5 shrink-0" />
+                        )}
+                        <span
+                          className={`text-sm ${
+                            f.highlight
+                              ? "text-primary font-semibold"
+                              : f.included
+                              ? "text-text-primary"
+                              : "text-text-muted"
+                          }`}
+                        >
+                          {f.text}
+                          {f.highlight && <span className="ml-1.5 text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full uppercase">New</span>}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a href={plan.ctaHref} className={ctaClasses(plan.style)}>
+                    {plan.cta}
+                  </a>
+                </motion.div>
+              </AnimatedSection>
+            );
+          })}
         </div>
 
         <AnimatedSection delay={0.5} className="text-center mt-10">

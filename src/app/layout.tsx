@@ -82,6 +82,13 @@ const softwareSchema = {
     },
     {
       "@type": "Offer",
+      name: "Starter (Annual)",
+      price: "950",
+      priceCurrency: "USD",
+      billingIncrement: "P1Y",
+    },
+    {
+      "@type": "Offer",
       name: "Professional",
       price: "299",
       priceCurrency: "USD",
@@ -89,10 +96,24 @@ const softwareSchema = {
     },
     {
       "@type": "Offer",
+      name: "Professional (Annual)",
+      price: "2870",
+      priceCurrency: "USD",
+      billingIncrement: "P1Y",
+    },
+    {
+      "@type": "Offer",
       name: "Enterprise",
       price: "599",
       priceCurrency: "USD",
       billingIncrement: "P1M",
+    },
+    {
+      "@type": "Offer",
+      name: "Enterprise (Annual)",
+      price: "5750",
+      priceCurrency: "USD",
+      billingIncrement: "P1Y",
     },
   ],
 };
