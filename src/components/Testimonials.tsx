@@ -77,19 +77,22 @@ export default function Testimonials() {
                     </p>
                   </blockquote>
 
-                  <footer className="mt-6 flex items-center gap-3">
-                    {item.logo ? (
-                      <img src={item.logo} alt="" className="h-8 object-contain" />
-                    ) : (
-                      <span className="text-2xl" role="img" aria-label="country flag">
-                        {item.flag}
-                      </span>
+                  <footer className="mt-6">
+                    {item.logo && (
+                      <img src={item.logo} alt="" className="h-7 object-contain mb-3" />
                     )}
-                    <div>
-                      <p className="text-sm font-semibold text-text-primary">
-                        {t(item.nameKey)}
-                      </p>
-                      <p className="text-xs text-text-muted">{t(item.roleKey)}</p>
+                    <div className="flex items-center gap-3">
+                      {!item.logo && (
+                        <span className="text-2xl" role="img" aria-label="country flag">
+                          {item.flag}
+                        </span>
+                      )}
+                      <div>
+                        <p className="text-sm font-semibold text-text-primary">
+                          {t(item.nameKey)}
+                        </p>
+                        <p className="text-xs text-text-muted">{t(item.roleKey)}</p>
+                      </div>
                     </div>
                   </footer>
                 </div>
