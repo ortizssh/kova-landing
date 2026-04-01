@@ -209,10 +209,10 @@ const reviewsSchema = {
     {
       "@type": "Review",
       reviewBody:
-        "Lo mejor es que funciona 24/7. Nuestros clientes reciben atención inmediata incluso a las 3am.",
+        "Desde que implementamos Kova, nuestros clientes reciben atención inmediata las 24 horas. La tasa de respuesta mejoró drásticamente y las ventas nocturnas se duplicaron.",
       author: {
         "@type": "Person",
-        name: "Carlos R.",
+        name: "Miguel Álvarez",
       },
       reviewRating: {
         "@type": "Rating",

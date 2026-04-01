@@ -23,7 +23,8 @@ const testimonials: Testimonial[] = [
     quoteKey: "testimonials.b.quote",
     nameKey: "testimonials.b.name",
     roleKey: "testimonials.b.role",
-    flag: "🇨🇴",
+    flag: "🇨🇱",
+    logo: "https://imperionfc.cl/wp-content/uploads/2026/02/logoinfc.png",
   },
   {
     quoteKey: "testimonials.c.quote",
