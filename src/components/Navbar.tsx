@@ -51,7 +51,10 @@ export default function Navbar() {
           <div ref={langRef} className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm text-text-secondary hover:bg-sage transition-colors cursor-pointer"
+              aria-label="Seleccionar idioma"
+              aria-haspopup="listbox"
+              aria-expanded={langOpen}
+              className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-xl text-sm text-text-secondary hover:bg-sage transition-colors cursor-pointer"
             >
               <span className="text-base">{locale === 'es' ? '🇲🇽' : '🇺🇸'}</span>
               <span className="font-medium">{locale === 'es' ? 'ES' : 'EN'}</span>
@@ -60,12 +63,14 @@ export default function Navbar() {
             {langOpen && (
               <div className="absolute top-full right-0 mt-1 bg-white rounded-xl border border-border shadow-lg py-1 min-w-[140px] z-50">
                 <button
+                  role="option"
                   onClick={() => { setLocale('es'); setLangOpen(false); }}
                   className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-sage transition-colors ${locale === 'es' ? 'text-primary font-semibold' : 'text-text-secondary'}`}
                 >
                   <span className="text-base">🇲🇽</span> Español
                 </button>
                 <button
+                  role="option"
                   onClick={() => { setLocale('en'); setLangOpen(false); }}
                   className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm hover:bg-sage transition-colors ${locale === 'en' ? 'text-primary font-semibold' : 'text-text-secondary'}`}
                 >

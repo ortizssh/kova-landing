@@ -10,6 +10,7 @@ function WaveformBar({ height, delay }: { height: number; delay: number }) {
       className="w-1 rounded-full bg-primary/70 animate-pulse"
       style={{
         height: `${height}px`,
+        transformOrigin: "bottom",
         animationDelay: `${delay}s`,
         animationDuration: "1.2s",
       }}
@@ -142,7 +143,7 @@ export default function VoiceCalling() {
                 </div>
 
                 {/* Waveform visualization */}
-                <div className="px-8 py-4 flex items-center justify-center gap-[3px]">
+                <div className="px-8 py-4 flex items-end justify-center gap-[3px]">
                   {[12, 20, 8, 26, 14, 22, 10, 18, 24, 12, 16, 22, 8, 20, 14, 26, 10, 18, 12, 24, 16, 20, 8, 22, 14].map(
                     (h, i) => (
                       <WaveformBar key={i} height={h} delay={i * 0.06} />

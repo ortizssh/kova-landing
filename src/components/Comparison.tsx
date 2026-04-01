@@ -111,7 +111,7 @@ export default function Comparison() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="overflow-x-auto rounded-2xl border border-border shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-border shadow-sm" style={{ WebkitOverflowScrolling: "touch" }}>
             <table className="w-full min-w-[560px] border-collapse bg-white">
               {/* Header */}
               <thead>

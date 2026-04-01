@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
@@ -13,7 +13,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left"
+        className="w-full flex items-center justify-between py-5 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
       >
         <span className="text-base font-semibold text-text-primary pr-4">
           {q}
@@ -25,19 +25,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           <ChevronDown className="w-5 h-5 text-text-muted shrink-0" />
         </motion.div>
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-text-secondary leading-relaxed">{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className="grid transition-all duration-300 ease-in-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
+      >
+        <div className="overflow-hidden">
+          <p className="pb-5 text-text-secondary leading-relaxed">{a}</p>
+        </div>
+      </div>
     </div>
   );
 }

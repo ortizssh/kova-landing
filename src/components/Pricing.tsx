@@ -116,8 +116,10 @@ export default function Pricing() {
           </p>
 
           {/* Billing period toggle */}
-          <div className="inline-flex items-center bg-white/80 dark:bg-white/10 rounded-full p-1 border border-border shadow-sm">
+          <div role="radiogroup" aria-label="Billing period" className="inline-flex items-center bg-white/80 dark:bg-white/10 rounded-full p-1 border border-border shadow-sm">
             <button
+              role="radio"
+              aria-pressed={billingPeriod === "monthly"}
               onClick={() => setBillingPeriod("monthly")}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                 billingPeriod === "monthly"
@@ -128,6 +130,8 @@ export default function Pricing() {
               {t("pricing.monthly") || "Mensual"}
             </button>
             <button
+              role="radio"
+              aria-pressed={billingPeriod === "annual"}
               onClick={() => setBillingPeriod("annual")}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
                 billingPeriod === "annual"
