@@ -45,6 +45,7 @@ export default function Pricing() {
     {
       name: "Starter",
       price: "$99",
+      oldPrice: "$149",
       period: "USD/mes",
       features: [
         { text: `1,000 ${t("plan.messages")}`, included: true },
