@@ -195,10 +195,10 @@ const reviewsSchema = {
     {
       "@type": "Review",
       reviewBody:
-        "Kova nos ayudó a recuperar ventas que ni sabíamos que estábamos perdiendo. En el primer mes aumentamos las conversiones un 15%.",
+        "Integrar al Agente Kova ha sido uno de los mayores aciertos del año. Es un servicio altamente personalizable e intuitivo, nos ha dado altos índices de conversión y ha sido entrenado de forma óptima en poco tiempo.",
       author: {
         "@type": "Person",
-        name: "María G.",
+        name: "Belén Escobar",
       },
       reviewRating: {
         "@type": "Rating",

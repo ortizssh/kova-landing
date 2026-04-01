@@ -274,9 +274,9 @@ const translations = {
   // Testimonials
   "testimonials.title": { es: "Lo que dicen nuestras tiendas", en: "What our stores say" },
   "testimonials.subtitle": { es: "Tiendas reales, resultados reales", en: "Real stores, real results" },
-  "testimonials.a.quote": { es: "Kova nos ayudó a recuperar ventas que ni sabíamos que estábamos perdiendo. En el primer mes aumentamos las conversiones un 15%.", en: "Kova helped us recover sales we didn't even know we were losing. In the first month we increased conversions by 15%." },
-  "testimonials.a.name": { es: "María G.", en: "María G." },
-  "testimonials.a.role": { es: "Tienda de cosmética, Chile", en: "Cosmetics store, Chile" },
+  "testimonials.a.quote": { es: "Integrar al Agente Kova ha sido uno de los mayores aciertos del año. Es un servicio altamente personalizable e intuitivo, nos ha dado altos índices de conversión y ha sido entrenado de forma óptima en poco tiempo. Este agente es un golazo para cualquier e-commerce.", en: "Integrating the Kova Agent has been one of the best decisions of the year. It's a highly customizable and intuitive service that has given us high conversion rates and was optimally trained in a short time. This agent is a game-changer for any e-commerce." },
+  "testimonials.a.name": { es: "Belén Escobar", en: "Belén Escobar" },
+  "testimonials.a.role": { es: "Marketing, Naáy Chile", en: "Marketing, Naáy Chile" },
   "testimonials.b.quote": { es: "Lo mejor es que funciona 24/7. Nuestros clientes reciben atención inmediata incluso a las 3am.", en: "The best part is it works 24/7. Our customers get immediate attention even at 3am." },
   "testimonials.b.name": { es: "Carlos R.", en: "Carlos R." },
   "testimonials.b.role": { es: "E-commerce de ropa, Colombia", en: "Clothing e-commerce, Colombia" },
