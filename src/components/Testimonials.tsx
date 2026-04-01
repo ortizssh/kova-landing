@@ -8,6 +8,7 @@ interface Testimonial {
   nameKey: "testimonials.a.name" | "testimonials.b.name" | "testimonials.c.name";
   roleKey: "testimonials.a.role" | "testimonials.b.role" | "testimonials.c.role";
   flag: string;
+  logo?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -16,6 +17,7 @@ const testimonials: Testimonial[] = [
     nameKey: "testimonials.a.name",
     roleKey: "testimonials.a.role",
     flag: "🇨🇱",
+    logo: "https://naay.cl/cdn/shop/files/naay-brand-WEB.png?v=1732543577&width=1505",
   },
   {
     quoteKey: "testimonials.b.quote",
@@ -75,9 +77,13 @@ export default function Testimonials() {
                   </blockquote>
 
                   <footer className="mt-6 flex items-center gap-3">
-                    <span className="text-2xl" role="img" aria-label="country flag">
-                      {item.flag}
-                    </span>
+                    {item.logo ? (
+                      <img src={item.logo} alt="" className="h-8 object-contain" />
+                    ) : (
+                      <span className="text-2xl" role="img" aria-label="country flag">
+                        {item.flag}
+                      </span>
+                    )}
                     <div>
                       <p className="text-sm font-semibold text-text-primary">
                         {t(item.nameKey)}
