@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     roleKey: "testimonials.a.role",
     flag: "🇨🇱",
     logo: "https://naay.cl/cdn/shop/files/naay-brand-WEB.png?v=1732543577&width=1505",
-    logoUrl: "https://www.naay.cl",
+    logoUrl: "https://naay.cl",
   },
   {
     quoteKey: "testimonials.b.quote",
