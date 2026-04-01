@@ -9,6 +9,7 @@ interface Testimonial {
   roleKey: "testimonials.a.role" | "testimonials.b.role" | "testimonials.c.role";
   flag: string;
   logo?: string;
+  logoUrl?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -18,6 +19,7 @@ const testimonials: Testimonial[] = [
     roleKey: "testimonials.a.role",
     flag: "🇨🇱",
     logo: "https://naay.cl/cdn/shop/files/naay-brand-WEB.png?v=1732543577&width=1505",
+    logoUrl: "https://www.naay.cl",
   },
   {
     quoteKey: "testimonials.b.quote",
@@ -25,6 +27,7 @@ const testimonials: Testimonial[] = [
     roleKey: "testimonials.b.role",
     flag: "🇨🇱",
     logo: "https://imperionfc.cl/wp-content/uploads/2026/02/logoinfc.png",
+    logoUrl: "https://www.imperionfc.cl",
   },
   {
     quoteKey: "testimonials.c.quote",
@@ -79,7 +82,9 @@ export default function Testimonials() {
 
                   <footer className="mt-6">
                     {item.logo && (
-                      <img src={item.logo} alt="" className="h-7 object-contain mb-3" />
+                      <a href={item.logoUrl} target="_blank" rel="noopener noreferrer">
+                        <img src={item.logo} alt="" className="h-7 object-contain mb-3 hover:opacity-80 transition-opacity" />
+                      </a>
                     )}
                     <div className="flex items-center gap-3">
                       {!item.logo && (
