@@ -80,12 +80,7 @@ export default function Testimonials() {
                     </p>
                   </blockquote>
 
-                  <footer className="mt-6">
-                    {item.logo && (
-                      <a href={item.logoUrl} target="_blank" rel="noopener noreferrer">
-                        <img src={item.logo} alt="" className="h-7 object-contain mb-3 hover:opacity-80 transition-opacity" />
-                      </a>
-                    )}
+                  <footer className="mt-6 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {!item.logo && (
                         <span className="text-2xl" role="img" aria-label="country flag">
@@ -99,6 +94,11 @@ export default function Testimonials() {
                         <p className="text-xs text-text-muted">{t(item.roleKey)}</p>
                       </div>
                     </div>
+                    {item.logo && (
+                      <a href={item.logoUrl} target="_blank" rel="noopener noreferrer">
+                        <img src={item.logo} alt="" className="h-7 object-contain hover:opacity-80 transition-opacity" />
+                      </a>
+                    )}
                   </footer>
                 </div>
               </div>
