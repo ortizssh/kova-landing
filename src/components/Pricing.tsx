@@ -14,6 +14,7 @@ interface PlanFeature {
 interface Plan {
   name: string;
   price: string;
+  oldPrice?: string;
   period: string;
   features: PlanFeature[];
   cta: string;
@@ -61,6 +62,7 @@ export default function Pricing() {
     {
       name: "Professional",
       price: "$299",
+      oldPrice: "$349",
       period: "USD/mes",
       highlighted: true,
       features: [
@@ -132,7 +134,12 @@ export default function Pricing() {
                   <h3 className="text-lg font-semibold text-text-primary mb-1">
                     {plan.name}
                   </h3>
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex items-baseline gap-1.5">
+                    {plan.oldPrice && (
+                      <span className="text-lg text-text-muted line-through">
+                        {plan.oldPrice}
+                      </span>
+                    )}
                     <span className="text-3xl font-bold text-text-primary">
                       {plan.price}
                     </span>
