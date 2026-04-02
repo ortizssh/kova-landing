@@ -19,11 +19,12 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const links = [
+  const links: { label: string; href: string; external?: boolean }[] = [
     { label: t("nav.features"), href: "#features" },
     { label: t("nav.howItWorks"), href: "#how-it-works" },
     { label: t("nav.pricing"), href: "#pricing" },
     { label: t("nav.faq"), href: "#faq" },
+    { label: t("footer.docs"), href: "https://app.heykova.io/docs", external: true },
   ];
 
   return (
@@ -39,6 +40,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
+              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
             >
               {l.label}
@@ -111,6 +113,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 onClick={() => setOpen(false)}
                 className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors"
               >

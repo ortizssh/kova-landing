@@ -18,7 +18,7 @@ export default function Footer() {
     {
       title: t("footer.resources"),
       links: [
-        { label: t("footer.docs"), href: "#", external: false },
+        { label: t("footer.docs"), href: "https://app.heykova.io/docs", external: true },
         { label: t("nav.faq"), href: "#faq", external: false },
         {
           label: t("footer.ext.shopify"),
