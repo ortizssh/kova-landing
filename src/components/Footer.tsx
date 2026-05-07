@@ -41,7 +41,7 @@ export default function Footer() {
       title: t("footer.legal"),
       links: [
         { label: t("footer.terms"), href: "#", external: false },
-        { label: t("footer.privacy"), href: "#", external: false },
+        { label: t("footer.privacy"), href: "/privacy", external: false },
       ],
     },
   ];
