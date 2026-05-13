@@ -66,13 +66,6 @@ export default function Comparison() {
       ),
     },
     {
-      label: t("comparison.f5"),
-      kova: <span className="text-sm font-semibold text-primary">$99</span>,
-      tidio: <span className="text-sm text-text-secondary">$29</span>,
-      gorgias: <span className="text-sm text-text-secondary">$300</span>,
-      intercom: <span className="text-sm text-text-secondary">$74</span>,
-    },
-    {
       label: t("comparison.f6"),
       kova: <Check />,
       tidio: (
@@ -93,6 +86,33 @@ export default function Comparison() {
       intercom: (
         <span className="text-xs text-text-muted">{t("comparison.limited")}</span>
       ),
+    },
+    {
+      label: t("comparison.f8"),
+      kova: <Check />,
+      tidio: (
+        <span className="text-xs text-text-muted">{t("comparison.limited")}</span>
+      ),
+      gorgias: (
+        <span className="text-xs text-text-muted">{t("comparison.limited")}</span>
+      ),
+      intercom: (
+        <span className="text-xs text-text-muted">{t("comparison.limited")}</span>
+      ),
+    },
+    {
+      label: t("comparison.f9"),
+      kova: <Check />,
+      tidio: <Cross />,
+      gorgias: <Cross />,
+      intercom: <Cross />,
+    },
+    {
+      label: t("comparison.f10"),
+      kova: <Check />,
+      tidio: <Cross />,
+      gorgias: <Cross />,
+      intercom: <Cross />,
     },
   ];
 

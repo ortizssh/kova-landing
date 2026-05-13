@@ -21,13 +21,15 @@ const translations = {
 
   // Hero
   "hero.badge": { es: "El 70% de tus visitantes se van sin comprar", en: "70% of your visitors leave without buying" },
-  "hero.title": { es: "Recupera las ventas que tu tienda", en: "Recover the sales your store" },
-  "hero.titleHighlight": { es: "pierde cada día", en: "loses every day" },
+  "hero.title": { es: "El agente de IA que vende, cotiza y agenda", en: "The AI agent that sells, quotes and books" },
+  "hero.titleHighlight": { es: "por ti, 24/7", en: "for you, 24/7" },
   "hero.subtitle": { es: "Tus clientes tienen dudas, no encuentran lo que buscan y abandonan el carrito. Kova los atiende por chat y los llama por teléfono con voz IA — con todo el contexto de tu catálogo.", en: "Your customers have questions, can't find what they need, and abandon their cart. Kova assists them via chat and calls them with AI voice — with full catalog context." },
   "hero.subtitleBold": { es: "Sin contratar vendedores. Sin perder más ventas.", en: "No hiring salespeople. No more lost sales." },
-  "hero.pill1": { es: "Chat que vende", en: "Chat that sells" },
-  "hero.pill2": { es: "Llamadas con voz IA", en: "AI voice calls" },
-  "hero.pill3": { es: "Carrito integrado", en: "Integrated cart" },
+  "hero.pill1": { es: "Llamadas con voz IA", en: "AI voice calls" },
+  "hero.pill2": { es: "Carrito integrado", en: "Integrated cart" },
+  "hero.pill3": { es: "Emails con recomendaciones", en: "AI email recommendations" },
+  "hero.pill4": { es: "Cotizaciones automáticas", en: "Automatic quotes" },
+  "hero.pill5": { es: "Agenda reuniones", en: "Books meetings" },
   "hero.cta": { es: "Quiero vender más con IA", en: "I want to sell more with AI" },
   "hero.ctaSecondary": { es: "Ver demo", en: "Watch demo" },
   "hero.subtext": { es: "Setup en 5 minutos · 7 días de prueba · Resultados desde el día 1", en: "5-minute setup · 7-day trial · Results from day 1" },
@@ -81,6 +83,12 @@ const translations = {
   "features.f5.desc": { es: "Si el cliente prefiere hablar, Kova lo llama por teléfono con voz IA — con todo el contexto de la conversación. Sin repetir, sin fricción.", en: "If the customer prefers talking, Kova calls them with AI voice — with full conversation context. No repeating, no friction." },
   "features.f6.title": { es: "Respuestas precisas sobre TU marca", en: "Precise answers about YOUR brand" },
   "features.f6.desc": { es: "Sube documentos, políticas, guías de talla. Kova los usa para dar respuestas exactas y alineadas con tu negocio. Cero respuestas inventadas.", en: "Upload documents, policies, size guides. Kova uses them for exact answers aligned with your business. Zero made-up responses." },
+  "features.f7.title": { es: "Recomendaciones por correo, automáticas", en: "Automatic email recommendations" },
+  "features.f7.desc": { es: "Kova envía sugerencias personalizadas al inbox de tu cliente —productos relacionados, restock, ofertas— con copy adaptado a su historial. Sin que muevas un dedo.", en: "Kova sends personalized suggestions to your customer's inbox — related products, restock, deals — with copy adapted to their history. Without you lifting a finger." },
+  "features.f8.title": { es: "Cotizaciones generadas al instante", en: "Quotes generated instantly" },
+  "features.f8.desc": { es: "Para B2B o tickets altos, Kova arma y envía la cotización dentro de la conversación. Productos, cantidades, precios y términos —lista para que tu cliente apruebe.", en: "For B2B or high tickets, Kova builds and sends the quote inside the conversation. Products, quantities, prices and terms — ready for your customer to approve." },
+  "features.f9.title": { es: "Agenda reuniones automáticamente", en: "Auto-schedules meetings" },
+  "features.f9.desc": { es: "Cuando un cliente quiere una llamada, demo o consulta, Kova revisa tu calendario y agenda el slot ideal —sin idas y vueltas. Confirmación y recordatorios para ambos lados, listo.", en: "When a customer wants a call, demo or consult, Kova checks your calendar and books the ideal slot — no back-and-forth. Confirmation and reminders for both sides, done." },
 
   // Widget Showcase
   "widget.title": { es: "Un widget que se adapta a tu marca", en: "A widget that adapts to your brand" },
@@ -210,6 +218,9 @@ const translations = {
   "comparison.f5": { es: "Precio desde", en: "Price from" },
   "comparison.f6": { es: "Shopify + WooCommerce", en: "Shopify + WooCommerce" },
   "comparison.f7": { es: "Español nativo", en: "Native Spanish" },
+  "comparison.f8": { es: "Emails con recomendaciones IA", en: "AI email recommendations" },
+  "comparison.f9": { es: "Cotizaciones automáticas", en: "Automatic quotes" },
+  "comparison.f10": { es: "Agenda reuniones desde el chat", en: "Books meetings from chat" },
   "comparison.limited": { es: "Limitado", en: "Limited" },
   "comparison.keywordOnly": { es: "Solo keywords", en: "Keywords only" },
   "comparison.onlyShopify": { es: "Solo Shopify", en: "Shopify only" },
@@ -231,6 +242,9 @@ const translations = {
   "plan.allFeatures": { es: "Todas las funcionalidades", en: "All features" },
   "plan.apiAccess": { es: "Acceso a API", en: "API access" },
   "plan.unlimitedVoice": { es: "Llamadas de voz ilimitadas", en: "Unlimited voice calls" },
+  "plan.emailRecs": { es: "Emails con recomendaciones IA", en: "AI email recommendations" },
+  "plan.autoQuotes": { es: "Cotizaciones automáticas", en: "Automatic quotes" },
+  "plan.meetingScheduling": { es: "Agenda reuniones desde el chat", en: "Books meetings from chat" },
 
   // Promo Popup
   "popup.badge": { es: "Oferta por tiempo limitado", en: "Limited time offer" },

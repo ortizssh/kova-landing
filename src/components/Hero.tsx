@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Mail, FileText, ShoppingCart, CalendarCheck, Phone, type LucideIcon } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
@@ -31,6 +32,58 @@ const msgVariant = {
   },
 };
 
+/* Floating capability icon — entrada con stagger + float loop, color por icono */
+function FloatingIcon({
+  Icon,
+  label,
+  className,
+  delay,
+  iconColor,
+  bgColor,
+  shadowColor,
+  floatDuration = 3.4,
+  floatRange = 6,
+  tilt = 0,
+}: {
+  Icon: LucideIcon;
+  label: string;
+  className: string;
+  delay: number;
+  iconColor: string;
+  bgColor: string;
+  shadowColor: string;
+  floatDuration?: number;
+  floatRange?: number;
+  tilt?: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5, y: 8, rotate: tilt }}
+      animate={{ opacity: 1, scale: 1, y: 0, rotate: tilt }}
+      transition={{ duration: 0.45, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`absolute z-20 ${className}`}
+      aria-label={label}
+    >
+      <motion.div
+        animate={{ y: [0, -floatRange, 0] }}
+        transition={{
+          duration: floatDuration,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay,
+        }}
+        className="w-20 h-20 sm:w-[88px] sm:h-[88px] rounded-3xl border border-white/70 flex items-center justify-center backdrop-blur-sm"
+        style={{
+          backgroundColor: bgColor,
+          boxShadow: `0 16px 40px -10px ${shadowColor}, 0 0 0 1px rgba(255,255,255,0.4) inset`,
+        }}
+      >
+        <Icon size={40} strokeWidth={2} style={{ color: iconColor }} />
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function ChatWidget() {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
@@ -46,6 +99,7 @@ function ChatWidget() {
       1400,  // step 6: typing before call suggestion
       1200,  // step 7: call suggestion appears
       1500,  // step 8: transition to call (animate chat out, call screen in)
+      600,   // step 9: capability icons orbit in (mail, invoice, cart)
     ];
 
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -61,6 +115,7 @@ function ChatWidget() {
   }, []);
 
   const showCall = step >= 8;
+  const showIcons = step >= 9;
 
   return (
     <div className="relative w-full max-w-[380px]">
@@ -239,6 +294,65 @@ function ChatWidget() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Capability icons — appear after the call overlay, stagger floating */}
+      <AnimatePresence>
+        {showIcons && (
+          <>
+            <FloatingIcon
+              key="icon-mail"
+              Icon={Mail}
+              label="Email notifications"
+              className="-left-10 sm:-left-20 top-4"
+              delay={0}
+              iconColor="#2563eb"
+              bgColor="#eff6ff"
+              shadowColor="rgba(37,99,235,0.35)"
+              tilt={-6}
+              floatRange={7}
+            />
+            <FloatingIcon
+              key="icon-calendar"
+              Icon={CalendarCheck}
+              label="Meeting scheduled"
+              className="-left-2 sm:-left-6 top-[44%] -translate-y-1/2"
+              delay={0.18}
+              floatDuration={3.6}
+              iconColor="#7c3aed"
+              bgColor="#f5f3ff"
+              shadowColor="rgba(124,58,237,0.35)"
+              tilt={4}
+              floatRange={5}
+            />
+            <FloatingIcon
+              key="icon-invoice"
+              Icon={FileText}
+              label="Invoice generated"
+              className="-left-8 sm:-left-16 bottom-16"
+              delay={0.36}
+              floatDuration={3.8}
+              iconColor="#059669"
+              bgColor="#ecfdf5"
+              shadowColor="rgba(5,150,105,0.35)"
+              tilt={-3}
+              floatRange={6}
+            />
+            <FloatingIcon
+              key="icon-cart"
+              Icon={ShoppingCart}
+              label="Order placed"
+              className="-right-4 sm:-right-10 bottom-24"
+              delay={0.54}
+              floatDuration={3.2}
+              iconColor="#ea580c"
+              bgColor="#fff7ed"
+              shadowColor="rgba(234,88,12,0.35)"
+              tilt={5}
+              floatRange={8}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -276,18 +390,26 @@ export default function Hero() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.25}>
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="flex flex-wrap gap-2 mb-6">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                  <Phone size={13} strokeWidth={2.2} />
                   {t("hero.pill1")}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                  <ShoppingCart size={13} strokeWidth={2.2} />
                   {t("hero.pill2")}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+                  <Mail size={13} strokeWidth={2.2} />
                   {t("hero.pill3")}
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                  <FileText size={13} strokeWidth={2.2} />
+                  {t("hero.pill4")}
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                  <CalendarCheck size={13} strokeWidth={2.2} />
+                  {t("hero.pill5")}
                 </span>
               </div>
             </AnimatedSection>

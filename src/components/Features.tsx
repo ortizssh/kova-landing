@@ -7,6 +7,9 @@ import {
   BarChart3,
   Mic,
   BookOpen,
+  Mail,
+  FileText,
+  CalendarCheck,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
@@ -45,6 +48,21 @@ export default function Features() {
       icon: BookOpen,
       title: t("features.f6.title"),
       description: t("features.f6.desc"),
+    },
+    {
+      icon: Mail,
+      title: t("features.f7.title"),
+      description: t("features.f7.desc"),
+    },
+    {
+      icon: FileText,
+      title: t("features.f8.title"),
+      description: t("features.f8.desc"),
+    },
+    {
+      icon: CalendarCheck,
+      title: t("features.f9.title"),
+      description: t("features.f9.desc"),
     },
   ];
 
