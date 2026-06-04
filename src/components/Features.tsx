@@ -6,7 +6,6 @@ import {
   Palette,
   BarChart3,
   Mic,
-  BookOpen,
   Mail,
   FileText,
   CalendarCheck,
@@ -43,11 +42,6 @@ export default function Features() {
       icon: Mic,
       title: t("features.f5.title"),
       description: t("features.f5.desc"),
-    },
-    {
-      icon: BookOpen,
-      title: t("features.f6.title"),
-      description: t("features.f6.desc"),
     },
     {
       icon: Mail,

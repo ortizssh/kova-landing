@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #6b5afc;
-  --color-primary-hover: #5849e0;
-  --color-primary-light: #8b7dff;
-  --color-accent: #cf795e;
-  --color-dark: #212120;
-  --color-sage: #F8F9F8;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #64648c;
-  --color-text-muted: #9494b8;
-  --color-border: #e8e8f0;
-  --color-bg-main: #fafafa;
-  --color-bg-warm: #f5f3f0;
+  /* Warm premium palette — galería de diseño / hogar alto ticket.
+     Token names kept stable; only values remapped from the old purple SaaS theme. */
+  --color-primary: #b5654a;        /* terracota / clay — color de marca y CTAs */
+  --color-primary-hover: #9e5440;
+  --color-primary-light: #c97d63;
+  --color-accent: #3d4a3e;         /* verde profundo — acento secundario */
+  --color-accent-hover: #313d33;
+  --color-dark: #2a2521;
+  --color-sage: #f2ece3;           /* arena cálida — fondos suaves */
+  --color-success: #4f7a5b;
+  --color-warning: #c8924a;
+  --color-error: #c1543f;
+  --color-text-primary: #2a2521;   /* café casi negro */
+  --color-text-secondary: #6b6258; /* gris cálido */
+  --color-text-muted: #9c9286;
+  --color-border: #e7dfd3;         /* borde cálido */
+  --color-bg-main: #faf7f2;        /* ivory cálido */
+  --color-bg-warm: #f2ece3;
   --color-bg-card: #ffffff;
 
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Plus Jakarta Sans", ui-serif, Georgia, serif;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
-  --shadow-primary: 0 8px 30px rgba(109, 92, 255, 0.25);
+  --shadow-sm: 0 2px 8px rgba(60, 47, 36, 0.05);
+  --shadow-md: 0 10px 34px rgba(60, 47, 36, 0.08);
+  --shadow-lg: 0 24px 64px rgba(60, 47, 36, 0.10);
+  --shadow-primary: 0 10px 34px rgba(181, 101, 74, 0.28);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -39,6 +43,15 @@ body {
   background: var(--color-bg-main);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
+}
+
+/* Editorial serif display for headlines — gives the premium gallery feel.
+   Scoped to hero/section titles (h1, h2). Smaller h3+ stay in the UI sans. */
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
 }
 
 ::-webkit-scrollbar {

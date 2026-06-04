@@ -44,7 +44,7 @@ export default function PromoPopup() {
           >
             <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden pointer-events-auto">
               {/* Top gradient bar */}
-              <div className="h-1.5 bg-gradient-to-r from-primary via-purple-500 to-pink-500" />
+              <div className="h-1.5 bg-gradient-to-r from-primary via-primary-light to-accent" />
 
               {/* Close */}
               <button
@@ -60,7 +60,7 @@ export default function PromoPopup() {
                   <motion.div
                     animate={{ rotate: [0, -8, 8, -4, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
-                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center shadow-lg shadow-primary/30"
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30"
                   >
                     <Zap className="w-8 h-8 text-white" fill="white" />
                   </motion.div>
@@ -99,7 +99,7 @@ export default function PromoPopup() {
                 {/* CTA */}
                 <a
                   href="https://app.heykova.io/register"
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-semibold text-base hover:shadow-lg hover:shadow-primary/25 transition-all"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-primary text-white font-semibold text-base hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/25 transition-all"
                 >
                   {t("popup.cta")}
                   <ArrowRight className="w-4 h-4" />

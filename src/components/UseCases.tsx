@@ -13,21 +13,21 @@ interface UseCaseCard {
 
 const cards: UseCaseCard[] = [
   {
-    icon: "🧴",
+    icon: "🛋️",
     industryKey: "usecases.a.industry",
     problemKey: "usecases.a.problem",
     resultKey: "usecases.a.result",
     metricKey: "usecases.a.metric",
   },
   {
-    icon: "👗",
+    icon: "💡",
     industryKey: "usecases.b.industry",
     problemKey: "usecases.b.problem",
     resultKey: "usecases.b.result",
     metricKey: "usecases.b.metric",
   },
   {
-    icon: "🍎",
+    icon: "⛱️",
     industryKey: "usecases.c.industry",
     problemKey: "usecases.c.problem",
     resultKey: "usecases.c.result",

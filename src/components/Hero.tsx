@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Mail, FileText, ShoppingCart, CalendarCheck, Phone, type LucideIcon } from "lucide-react";
+import { Mail, FileText, ShoppingCart, CalendarCheck, Phone, Camera, type LucideIcon } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
@@ -186,11 +186,11 @@ function ChatWidget() {
                   {t("chat.productIntro")}
                 </div>
                 <div className="border-t border-border p-3">
-                  <div className="w-full h-24 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg mb-2 flex items-center justify-center">
-                    <span className="text-3xl">🧴</span>
+                  <div className="w-full h-24 bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg mb-2 flex items-center justify-center">
+                    <span className="text-3xl">🛋️</span>
                   </div>
                   <p className="text-sm font-semibold text-text-primary">{t("chat.productName")}</p>
-                  <p className="text-sm font-bold text-primary mt-0.5">$24.990</p>
+                  <p className="text-sm font-bold text-primary mt-0.5">$1.290.000</p>
                   <button className="mt-2 w-full py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors">
                     {t("chat.addToCart")}
                   </button>
@@ -367,7 +367,8 @@ export default function Hero() {
           {/* Left */}
           <div>
             <AnimatedSection>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-600 text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-medium mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
                 {t("hero.badge")}
               </span>
             </AnimatedSection>
@@ -376,9 +377,9 @@ export default function Hero() {
             <p className="sr-only">{t("hero.definition")}</p>
 
             <AnimatedSection delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] font-bold leading-tight text-text-primary mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-[3.75rem] font-semibold leading-[1.08] text-text-primary mb-6">
                 {t("hero.title")}{" "}
-                <span className="text-primary">{t("hero.titleHighlight")}</span>
+                <span className="text-primary italic">{t("hero.titleHighlight")}</span>
               </h1>
             </AnimatedSection>
 
@@ -410,6 +411,10 @@ export default function Hero() {
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
                   <CalendarCheck size={13} strokeWidth={2.2} />
                   {t("hero.pill5")}
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                  <Camera size={13} strokeWidth={2.2} />
+                  {t("hero.pill6")}
                 </span>
               </div>
             </AnimatedSection>

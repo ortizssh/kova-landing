@@ -1,18 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Metrics from "@/components/Metrics";
-import HowItWorks from "@/components/HowItWorks";
+import VoiceCalling from "@/components/VoiceCalling";
+import PhotoRecommend from "@/components/PhotoRecommend";
+import UseCases from "@/components/UseCases";
 import VideoDemo from "@/components/VideoDemo";
+import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import WidgetShowcase from "@/components/WidgetShowcase";
-import VoiceCalling from "@/components/VoiceCalling";
 import Comparison from "@/components/Comparison";
 import Integrations from "@/components/Integrations";
+import EarlyAccess from "@/components/EarlyAccess";
 import ValueStack from "@/components/ValueStack";
 import Pricing from "@/components/Pricing";
 import Guarantee from "@/components/Guarantee";
-import EarlyAccess from "@/components/EarlyAccess";
-import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -24,17 +24,22 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        {/* Hook de alto ticket */}
         <Hero />
-        <Metrics />
-        <HowItWorks />
+        {/* Diferenciadores que importan al comprador premium */}
+        <VoiceCalling />
+        <PhotoRecommend />
+        {/* Prueba específica del nicho */}
+        <UseCases />
         <VideoDemo />
+        {/* Cómo + qué incluye */}
+        <HowItWorks />
         <Features />
         <WidgetShowcase />
-        <VoiceCalling />
         <Comparison />
         <Integrations />
+        {/* Prueba social y ROI */}
         <EarlyAccess />
-        <Testimonials />
         <ValueStack />
         <Pricing />
         <Guarantee />

@@ -72,12 +72,12 @@ export default function WidgetShowcase() {
                 className="w-[380px] bg-white rounded-3xl shadow-xl border overflow-hidden"
                 animate={{
                   borderColor: [
-                    "#6b5afc",
+                    "#b5654a",
                     "#10b981",
                     "#f59e0b",
                     "#ef4444",
                     "#3b82f6",
-                    "#6b5afc",
+                    "#b5654a",
                   ],
                 }}
                 transition={{
@@ -91,12 +91,12 @@ export default function WidgetShowcase() {
                   className="px-5 py-4 flex items-center gap-3"
                   animate={{
                     background: [
-                      "#6b5afc",
+                      "#b5654a",
                       "#10b981",
                       "#f59e0b",
                       "#ef4444",
                       "#3b82f6",
-                      "#6b5afc",
+                      "#b5654a",
                     ],
                   }}
                   transition={{
@@ -130,20 +130,20 @@ export default function WidgetShowcase() {
                       className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
                       animate={{
                         background: [
-                          "rgba(107, 90, 252, 0.1)",
+                          "rgba(181, 101, 74, 0.1)",
                           "rgba(16, 185, 129, 0.1)",
                           "rgba(245, 158, 11, 0.1)",
                           "rgba(239, 68, 68, 0.1)",
                           "rgba(59, 130, 246, 0.1)",
-                          "rgba(107, 90, 252, 0.1)",
+                          "rgba(181, 101, 74, 0.1)",
                         ],
                         color: [
-                          "#6b5afc",
+                          "#b5654a",
                           "#10b981",
                           "#f59e0b",
                           "#ef4444",
                           "#3b82f6",
-                          "#6b5afc",
+                          "#b5654a",
                         ],
                       }}
                       transition={{
@@ -167,28 +167,28 @@ export default function WidgetShowcase() {
                         className="px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors"
                         animate={{
                           borderColor: [
-                            "#6b5afc4d",
+                            "#b5654a4d",
                             "#10b9814d",
                             "#f59e0b4d",
                             "#ef44444d",
                             "#3b82f64d",
-                            "#6b5afc4d",
+                            "#b5654a4d",
                           ],
                           color: [
-                            "#6b5afc",
+                            "#b5654a",
                             "#10b981",
                             "#f59e0b",
                             "#ef4444",
                             "#3b82f6",
-                            "#6b5afc",
+                            "#b5654a",
                           ],
                           background: [
-                            "rgba(107, 90, 252, 0.05)",
+                            "rgba(181, 101, 74, 0.05)",
                             "rgba(16, 185, 129, 0.05)",
                             "rgba(245, 158, 11, 0.05)",
                             "rgba(239, 68, 68, 0.05)",
                             "rgba(59, 130, 246, 0.05)",
-                            "rgba(107, 90, 252, 0.05)",
+                            "rgba(181, 101, 74, 0.05)",
                           ],
                         }}
                         transition={{
@@ -205,10 +205,10 @@ export default function WidgetShowcase() {
 
                   {/* Product card */}
                   <div className="ml-9 bg-white rounded-xl shadow-sm overflow-hidden max-w-[270px]">
-                    <div className="h-28 bg-gradient-to-br from-violet-200 via-indigo-100 to-purple-200 flex items-center justify-center relative">
+                    <div className="h-28 bg-gradient-to-br from-sage via-bg-warm to-primary/15 flex items-center justify-center relative">
                       {/* Colored product placeholder */}
                       <div className="w-16 h-16 rounded-xl bg-white/60 backdrop-blur-sm flex items-center justify-center shadow-sm">
-                        <span className="text-3xl">👟</span>
+                        <span className="text-3xl">🛋️</span>
                       </div>
                       {/* Promo badge */}
                       <span className="absolute top-2 right-2 bg-accent text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
@@ -217,11 +217,11 @@ export default function WidgetShowcase() {
                     </div>
                     <div className="p-3">
                       <p className="text-sm font-semibold text-text-primary">
-                        Zapatilla Urban Pro
+                        Sofá Modular Roble
                       </p>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <p className="text-sm font-bold text-primary">$49.990</p>
-                        <p className="text-xs text-text-muted line-through">$55.990</p>
+                        <p className="text-sm font-bold text-primary">$1.290.000</p>
+                        <p className="text-xs text-text-muted line-through">$1.490.000</p>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         {[1, 2, 3, 4, 5].map((s) => (
@@ -235,12 +235,12 @@ export default function WidgetShowcase() {
                         className="mt-2 w-full py-1.5 text-white text-xs font-semibold rounded-lg"
                         animate={{
                           background: [
-                            "#6b5afc",
-                            "#10b981",
-                            "#f59e0b",
-                            "#ef4444",
-                            "#3b82f6",
-                            "#6b5afc",
+                            "#b5654a",
+                            "#3d4a3e",
+                            "#c8924a",
+                            "#4f7a5b",
+                            "#9e5440",
+                            "#b5654a",
                           ],
                         }}
                         transition={{
@@ -261,16 +261,16 @@ export default function WidgetShowcase() {
                         🛒 Tu carrito (1)
                       </span>
                       <span className="text-sm font-bold text-primary">
-                        $49.990
+                        $1.290.000
                       </span>
                     </div>
                     <div className="flex items-center gap-2.5 p-2 bg-sage rounded-lg">
-                      <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center text-lg">
-                        👟
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-lg">
+                        🛋️
                       </div>
                       <div className="flex-1">
                         <p className="text-xs font-medium text-text-primary">
-                          Zapatilla Urban Pro
+                          Sofá Modular Roble
                         </p>
                         <p className="text-[11px] text-text-muted">Qty: 1</p>
                       </div>
@@ -278,12 +278,12 @@ export default function WidgetShowcase() {
                         className="text-xs font-semibold"
                         animate={{
                           color: [
-                            "#6b5afc",
-                            "#10b981",
-                            "#f59e0b",
-                            "#ef4444",
-                            "#3b82f6",
-                            "#6b5afc",
+                            "#b5654a",
+                            "#3d4a3e",
+                            "#c8924a",
+                            "#4f7a5b",
+                            "#9e5440",
+                            "#b5654a",
                           ],
                         }}
                         transition={{
@@ -292,27 +292,27 @@ export default function WidgetShowcase() {
                           ease: "linear",
                         }}
                       >
-                        $49.990
+                        $1.290.000
                       </motion.span>
                     </div>
                     <motion.button
                       className="mt-2 w-full py-1.5 text-xs font-semibold rounded-lg"
                       animate={{
                         background: [
-                          "rgba(107, 90, 252, 0.1)",
-                          "rgba(16, 185, 129, 0.1)",
-                          "rgba(245, 158, 11, 0.1)",
-                          "rgba(239, 68, 68, 0.1)",
-                          "rgba(59, 130, 246, 0.1)",
-                          "rgba(107, 90, 252, 0.1)",
+                          "rgba(181, 101, 74, 0.1)",
+                          "rgba(61, 74, 62, 0.1)",
+                          "rgba(200, 146, 74, 0.1)",
+                          "rgba(79, 122, 91, 0.1)",
+                          "rgba(158, 84, 64, 0.1)",
+                          "rgba(181, 101, 74, 0.1)",
                         ],
                         color: [
-                          "#6b5afc",
-                          "#10b981",
-                          "#f59e0b",
-                          "#ef4444",
-                          "#3b82f6",
-                          "#6b5afc",
+                          "#b5654a",
+                          "#3d4a3e",
+                          "#c8924a",
+                          "#4f7a5b",
+                          "#9e5440",
+                          "#b5654a",
                         ],
                       }}
                       transition={{
@@ -348,12 +348,12 @@ export default function WidgetShowcase() {
                     className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
                     animate={{
                       background: [
-                        "#6b5afc",
+                        "#b5654a",
                         "#10b981",
                         "#f59e0b",
                         "#ef4444",
                         "#3b82f6",
-                        "#6b5afc",
+                        "#b5654a",
                       ],
                     }}
                     transition={{

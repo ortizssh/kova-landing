@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import "./globals.css";
 
@@ -10,13 +10,21 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-display",
+});
+
 export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
-  title: "Kova — Vendedor IA para Shopify y WooCommerce",
+  title: "Kova — El vendedor IA para tiendas de hogar premium",
   description:
-    "Asistente de ventas con IA para tu tienda online. Chat inteligente, llamadas con voz IA y carrito integrado. Hasta 30% de conversión. Prueba 7 días gratis.",
+    "El comprador de alto ticket no compra por impulso: pregunta, duda y se va. Kova es tu mejor vendedor de showroom 24/7 — atiende por chat, recomienda y llama por teléfono para cerrar. Para muebles de diseño, deco, iluminación y outdoor premium en Shopify y WooCommerce.",
   alternates: {
     canonical: "https://heykova.io",
     languages: {
@@ -26,9 +34,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Kova — Vendedor IA para Shopify y WooCommerce",
+    title: "Kova — El vendedor IA para tiendas de hogar premium",
     description:
-      "Asistente de ventas con IA para tu tienda online. Chat inteligente, llamadas con voz IA y carrito integrado. Hasta 30% de conversión. Prueba 7 días gratis.",
+      "Tu mejor vendedor de showroom, 24/7. Atiende por chat, recomienda y llama por teléfono para cerrar ventas de alto ticket. Muebles de diseño, deco, iluminación y outdoor premium.",
     url: "https://heykova.io",
     siteName: "Kova",
     type: "website",
@@ -44,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kova — Vendedor IA para Shopify y WooCommerce",
+    title: "Kova — El vendedor IA para tiendas de hogar premium",
     description:
-      "Asistente de ventas con IA para tu tienda online. Chat inteligente, llamadas con voz IA y carrito integrado. Hasta 30% de conversión. Prueba 7 días gratis.",
+      "Tu mejor vendedor de showroom, 24/7. Atiende por chat, recomienda y llama por teléfono para cerrar ventas de alto ticket. Muebles de diseño, deco, iluminación y outdoor premium.",
     images: ["https://heykova.io/og-image.png"],
   },
 };
@@ -270,7 +278,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={plusJakarta.variable}>
+    <html lang="es" className={`${plusJakarta.variable} ${fraunces.variable}`}>
       <head>
         <script defer src="https://dustkey-os.vercel.app/t.js" data-domain="heykova.io"></script>
         <script

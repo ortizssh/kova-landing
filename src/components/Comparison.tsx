@@ -114,6 +114,13 @@ export default function Comparison() {
       gorgias: <Cross />,
       intercom: <Cross />,
     },
+    {
+      label: t("comparison.f11"),
+      kova: <Check />,
+      tidio: <Cross />,
+      gorgias: <Cross />,
+      intercom: <Cross />,
+    },
   ];
 
   const competitors = ["Tidio", "Gorgias", "Intercom"];
