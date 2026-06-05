@@ -68,7 +68,7 @@ export default function PhotoRecommend() {
                   <div className="flex-1">
                     <div className="text-white font-semibold text-sm">Kova</div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+                      <span className="w-2 h-2 rounded-full bg-white/90 inline-block" />
                       <span className="text-white/80 text-xs">{t("chat.online")}</span>
                     </div>
                   </div>
@@ -78,12 +78,12 @@ export default function PhotoRecommend() {
                 <div className="p-4 flex flex-col gap-3 bg-[#f9f9fb] min-h-[400px]">
                   {/* User photo message */}
                   <div className="flex flex-col items-end gap-1">
-                    <div className="relative w-[180px] h-[120px] rounded-2xl rounded-br-sm overflow-hidden shadow-sm bg-gradient-to-br from-amber-100 via-orange-100 to-rose-100">
+                    <div className="relative w-[180px] h-[120px] rounded-2xl rounded-br-sm overflow-hidden shadow-sm bg-gradient-to-br from-[#e6dcc8] via-[#d8c4a4] to-[#c2a37e]">
                       {/* simple room illustration */}
                       <div className="absolute inset-0 flex items-end justify-center pb-3">
                         <span className="text-4xl">🛋️</span>
                       </div>
-                      <div className="absolute top-2 left-3 w-8 h-8 rounded-full bg-yellow-200/70 blur-[1px]" />
+                      <div className="absolute top-2 left-3 w-8 h-8 rounded-full bg-[#ecd9b5]/70 blur-[1px]" />
                       {/* scan line */}
                       <motion.div
                         className="absolute left-0 right-0 h-8 bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0"
@@ -113,14 +113,14 @@ export default function PhotoRecommend() {
                   <div className="flex gap-2 pl-8">
                     <ProductCard
                       emoji="🛋️"
-                      gradient="bg-gradient-to-br from-amber-100 to-orange-100"
+                      gradient="bg-gradient-to-br from-[#e8dcc6] to-[#d3b896]"
                       name={t("vision.mock.p1.name")}
                       price="$1.290.000"
                       delay={0.2}
                     />
                     <ProductCard
                       emoji="💡"
-                      gradient="bg-gradient-to-br from-yellow-100 to-amber-100"
+                      gradient="bg-gradient-to-br from-[#efe6d2] to-[#d8c089]"
                       name={t("vision.mock.p2.name")}
                       price="$189.000"
                       delay={0.35}

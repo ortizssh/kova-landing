@@ -137,8 +137,8 @@ export default function VoiceCalling() {
                   <h3 className="text-white text-lg font-semibold">Kova</h3>
                   <p className="text-white/50 text-sm mt-0.5">+56 9 8765 4321</p>
                   <div className="flex items-center gap-2 mt-2">
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-green-400 text-sm font-mono">03:42</span>
+                    <span className="w-2 h-2 rounded-full bg-white/90 animate-pulse" />
+                    <span className="text-white/70 text-sm font-mono">03:42</span>
                   </div>
                 </div>
 

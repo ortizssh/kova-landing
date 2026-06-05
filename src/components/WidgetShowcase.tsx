@@ -72,12 +72,12 @@ export default function WidgetShowcase() {
                 className="w-[380px] bg-white rounded-3xl shadow-xl border overflow-hidden"
                 animate={{
                   borderColor: [
-                    "#b5654a",
-                    "#10b981",
-                    "#f59e0b",
-                    "#ef4444",
-                    "#3b82f6",
-                    "#b5654a",
+                    "#937552",
+                    "#c47a54",
+                    "#7a8b6f",
+                    "#6b87a8",
+                    "#c8a24a",
+                    "#937552",
                   ],
                 }}
                 transition={{
@@ -91,12 +91,12 @@ export default function WidgetShowcase() {
                   className="px-5 py-4 flex items-center gap-3"
                   animate={{
                     background: [
-                      "#b5654a",
-                      "#10b981",
-                      "#f59e0b",
-                      "#ef4444",
-                      "#3b82f6",
-                      "#b5654a",
+                      "#937552",
+                      "#c47a54",
+                      "#7a8b6f",
+                      "#6b87a8",
+                      "#c8a24a",
+                      "#937552",
                     ],
                   }}
                   transition={{
@@ -111,7 +111,7 @@ export default function WidgetShowcase() {
                   <div className="flex-1">
                     <div className="text-white font-semibold text-sm">Kova</div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-green-400" />
+                      <span className="w-2 h-2 rounded-full bg-white/90" />
                       <span className="text-white/80 text-xs">En línea</span>
                     </div>
                   </div>
@@ -130,20 +130,20 @@ export default function WidgetShowcase() {
                       className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
                       animate={{
                         background: [
-                          "rgba(181, 101, 74, 0.1)",
-                          "rgba(16, 185, 129, 0.1)",
-                          "rgba(245, 158, 11, 0.1)",
-                          "rgba(239, 68, 68, 0.1)",
-                          "rgba(59, 130, 246, 0.1)",
-                          "rgba(181, 101, 74, 0.1)",
+                          "rgba(147, 117, 82, 0.1)",
+                          "rgba(196, 122, 84, 0.1)",
+                          "rgba(122, 139, 111, 0.1)",
+                          "rgba(107, 135, 168, 0.1)",
+                          "rgba(200, 162, 74, 0.1)",
+                          "rgba(147, 117, 82, 0.1)",
                         ],
                         color: [
-                          "#b5654a",
-                          "#10b981",
-                          "#f59e0b",
-                          "#ef4444",
-                          "#3b82f6",
-                          "#b5654a",
+                          "#937552",
+                          "#c47a54",
+                          "#7a8b6f",
+                          "#6b87a8",
+                          "#c8a24a",
+                          "#937552",
                         ],
                       }}
                       transition={{
@@ -167,28 +167,28 @@ export default function WidgetShowcase() {
                         className="px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors"
                         animate={{
                           borderColor: [
-                            "#b5654a4d",
-                            "#10b9814d",
-                            "#f59e0b4d",
-                            "#ef44444d",
-                            "#3b82f64d",
-                            "#b5654a4d",
+                            "#9375524d",
+                            "#c47a544d",
+                            "#7a8b6f4d",
+                            "#6b87a84d",
+                            "#c8a24a4d",
+                            "#9375524d",
                           ],
                           color: [
-                            "#b5654a",
-                            "#10b981",
-                            "#f59e0b",
-                            "#ef4444",
-                            "#3b82f6",
-                            "#b5654a",
+                            "#937552",
+                            "#c47a54",
+                            "#7a8b6f",
+                            "#6b87a8",
+                            "#c8a24a",
+                            "#937552",
                           ],
                           background: [
-                            "rgba(181, 101, 74, 0.05)",
-                            "rgba(16, 185, 129, 0.05)",
-                            "rgba(245, 158, 11, 0.05)",
-                            "rgba(239, 68, 68, 0.05)",
-                            "rgba(59, 130, 246, 0.05)",
-                            "rgba(181, 101, 74, 0.05)",
+                            "rgba(147, 117, 82, 0.05)",
+                            "rgba(196, 122, 84, 0.05)",
+                            "rgba(122, 139, 111, 0.05)",
+                            "rgba(107, 135, 168, 0.05)",
+                            "rgba(200, 162, 74, 0.05)",
+                            "rgba(147, 117, 82, 0.05)",
                           ],
                         }}
                         transition={{
@@ -235,12 +235,12 @@ export default function WidgetShowcase() {
                         className="mt-2 w-full py-1.5 text-white text-xs font-semibold rounded-lg"
                         animate={{
                           background: [
-                            "#b5654a",
+                            "#937552",
                             "#3d4a3e",
                             "#c8924a",
                             "#4f7a5b",
                             "#9e5440",
-                            "#b5654a",
+                            "#937552",
                           ],
                         }}
                         transition={{
@@ -278,12 +278,12 @@ export default function WidgetShowcase() {
                         className="text-xs font-semibold"
                         animate={{
                           color: [
-                            "#b5654a",
+                            "#937552",
                             "#3d4a3e",
                             "#c8924a",
                             "#4f7a5b",
                             "#9e5440",
-                            "#b5654a",
+                            "#937552",
                           ],
                         }}
                         transition={{
@@ -299,20 +299,20 @@ export default function WidgetShowcase() {
                       className="mt-2 w-full py-1.5 text-xs font-semibold rounded-lg"
                       animate={{
                         background: [
-                          "rgba(181, 101, 74, 0.1)",
+                          "rgba(147, 117, 82, 0.1)",
                           "rgba(61, 74, 62, 0.1)",
                           "rgba(200, 146, 74, 0.1)",
                           "rgba(79, 122, 91, 0.1)",
                           "rgba(158, 84, 64, 0.1)",
-                          "rgba(181, 101, 74, 0.1)",
+                          "rgba(147, 117, 82, 0.1)",
                         ],
                         color: [
-                          "#b5654a",
+                          "#937552",
                           "#3d4a3e",
                           "#c8924a",
                           "#4f7a5b",
                           "#9e5440",
-                          "#b5654a",
+                          "#937552",
                         ],
                       }}
                       transition={{
@@ -348,12 +348,12 @@ export default function WidgetShowcase() {
                     className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
                     animate={{
                       background: [
-                        "#b5654a",
-                        "#10b981",
-                        "#f59e0b",
-                        "#ef4444",
-                        "#3b82f6",
-                        "#b5654a",
+                        "#937552",
+                        "#c47a54",
+                        "#7a8b6f",
+                        "#6b87a8",
+                        "#c8a24a",
+                        "#937552",
                       ],
                     }}
                     transition={{

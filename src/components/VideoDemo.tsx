@@ -54,9 +54,9 @@ export default function VideoDemo() {
               <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
                 <div className="w-[72px] h-[72px] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:bg-white transition-colors duration-300">
                   {playing ? (
-                    <Pause className="w-8 h-8 text-primary" fill="#b5654a" />
+                    <Pause className="w-8 h-8 text-primary" fill="#937552" />
                   ) : (
-                    <Play className="w-8 h-8 text-primary ml-1" fill="#b5654a" />
+                    <Play className="w-8 h-8 text-primary ml-1" fill="#937552" />
                   )}
                 </div>
               </div>

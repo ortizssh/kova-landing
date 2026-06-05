@@ -4,13 +4,13 @@ import AnimatedSection from "./AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
 const Check = () => (
-  <span className="text-green-500 font-bold text-base" aria-label="Yes">
+  <span className="text-primary font-bold text-base" aria-label="Yes">
     ✓
   </span>
 );
 
 const Cross = () => (
-  <span className="text-red-400 font-bold text-base" aria-label="No">
+  <span className="text-text-muted font-normal text-base" aria-label="No">
     ✗
   </span>
 );

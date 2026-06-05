@@ -68,8 +68,8 @@ export default function PromoPopup() {
 
                 {/* Badge */}
                 <div className="flex justify-center mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     {t("popup.badge")}
                   </span>
                 </div>

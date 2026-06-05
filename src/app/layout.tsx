@@ -1,22 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
-import { Providers } from "@/components/Providers";
 import "./globals.css";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-sans",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-display",
-});
 
 export const metadata: Metadata = {
   icons: {
@@ -278,7 +261,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${plusJakarta.variable} ${fraunces.variable}`}>
+    <html lang="es" data-palette="white" data-type="sans" data-fgrid="grid" data-motion="subtle">
       <head>
         <script defer src="https://dustkey-os.vercel.app/t.js" data-domain="heykova.io"></script>
         <script
@@ -298,7 +281,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
         />
       </head>
-      <body className="font-sans antialiased"><Providers>{children}</Providers></body>
+      <body>{children}</body>
     </html>
   );
 }

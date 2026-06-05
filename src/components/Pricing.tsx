@@ -149,7 +149,7 @@ export default function Pricing() {
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                 billingPeriod === "annual"
                   ? "bg-white/20 text-white"
-                  : "bg-green-500/10 text-green-600"
+                  : "bg-primary/10 text-primary"
               }`}>
                 -20%
               </span>
@@ -203,7 +203,7 @@ export default function Pricing() {
                       </span>
                     </div>
                     {isAnnual && (
-                      <p className="text-xs text-green-600 font-semibold mt-1">
+                      <p className="text-xs text-text-secondary font-semibold mt-1">
                         {t("pricing.saveAnnual") || "Facturado anualmente"} — {t("pricing.save") || "Ahorras"} ${savings}/{t("pricing.year") || "año"}
                       </p>
                     )}

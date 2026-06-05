@@ -127,7 +127,7 @@ function ChatWidget() {
           <div className="flex-1">
             <div className="text-white font-semibold text-sm">Kova</div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+              <span className="w-2 h-2 rounded-full bg-white/90 inline-block" />
               <span className="text-white/80 text-xs">{t("chat.online")}</span>
             </div>
           </div>
@@ -186,7 +186,7 @@ function ChatWidget() {
                   {t("chat.productIntro")}
                 </div>
                 <div className="border-t border-border p-3">
-                  <div className="w-full h-24 bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg mb-2 flex items-center justify-center">
+                  <div className="w-full h-24 bg-gradient-to-br from-[#e8dcc6] to-[#d3b896] rounded-lg mb-2 flex items-center justify-center">
                     <span className="text-3xl">🛋️</span>
                   </div>
                   <p className="text-sm font-semibold text-text-primary">{t("chat.productName")}</p>
@@ -212,7 +212,7 @@ function ChatWidget() {
                 </div>
                 <div className="px-3 pb-2.5">
                   <motion.button
-                    className="w-full flex items-center justify-center gap-2 py-2 bg-green-500 text-white text-xs font-semibold rounded-lg"
+                    className="w-full flex items-center justify-center gap-2 py-2 bg-primary text-white text-xs font-semibold rounded-lg"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -228,8 +228,8 @@ function ChatWidget() {
 
       {/* Input bar */}
       <div className="border-t border-border px-3 py-2.5 flex items-center gap-2">
-        <div className="w-7 h-7 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 cursor-pointer hover:bg-green-500/20 transition-colors">
-          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 cursor-pointer hover:bg-primary/20 transition-colors">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
         <div className="flex-1 bg-[#f5f5f8] rounded-full px-3 py-2 text-xs text-text-muted">
           {t("chat.placeholder")}
@@ -262,8 +262,8 @@ function ChatWidget() {
               <div className="text-center">
                 <h3 className="text-white text-sm font-semibold">Kova</h3>
                 <div className="flex items-center justify-center gap-1.5 mt-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-green-400 text-xs font-mono">03:42</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/90 animate-pulse" />
+                  <span className="text-white/70 text-xs font-mono">03:42</span>
                 </div>
               </div>
               {/* Waveform */}
@@ -367,9 +367,9 @@ export default function Hero() {
           {/* Left */}
           <div>
             <AnimatedSection>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-medium mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
-                {t("hero.badge")}
+              <span className="inline-flex items-center gap-3 mb-7 text-text-secondary">
+                <span className="w-8 h-px bg-text-primary inline-block" />
+                <span className="eyebrow">{t("hero.badge")}</span>
               </span>
             </AnimatedSection>
 
@@ -377,9 +377,9 @@ export default function Hero() {
             <p className="sr-only">{t("hero.definition")}</p>
 
             <AnimatedSection delay={0.1}>
-              <h1 className="text-4xl sm:text-5xl md:text-[3.75rem] font-semibold leading-[1.08] text-text-primary mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-[3.75rem] font-normal leading-[1.05] text-text-primary mb-6">
                 {t("hero.title")}{" "}
-                <span className="text-primary italic">{t("hero.titleHighlight")}</span>
+                <span className="italic">{t("hero.titleHighlight")}</span>
               </h1>
             </AnimatedSection>
 
